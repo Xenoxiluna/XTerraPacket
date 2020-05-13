@@ -24,15 +24,15 @@ public protocol TerrariaPacket{
 }
 
 extension TerrariaPacket{
-    init(from data: [UInt8]) {
+    public init(from data: [UInt8]) {
         self.init()
         self.bytes = data
     }
-    func getType() -> TerrariaPacketType {
+    public func getType() -> TerrariaPacketType {
         return self.packetType
     }
     
-    mutating func decode() throws{
+    mutating public func decode() throws{
         try decodeHeader()
         try decodePayload()
     }
@@ -43,7 +43,7 @@ extension TerrariaPacket{
     ///   1        UInt8     Message Type
     ///   2    *     Payload
     /// ----------------------------------
-    mutating func decodeHeader() throws{
+    mutating public func decodeHeader() throws{
         let packetData = BinaryReadableData(data: Data(self.bytes))
         let packetReader = BinaryReader(packetData)
         self.length = try packetReader.readUInt16()
