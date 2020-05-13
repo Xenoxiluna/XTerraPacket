@@ -150,112 +150,112 @@ public enum TerrariaPacketFactory{
                 return PacketTeleport(from: packet)
             case .PlayerHealOther:
                 return PacketPlayerHealOther(from: packet)
-            case .Placeholder:// TODO FINISH EDITING
-                return PacketConnectRequest(from: packet)
+            case .Placeholder:
+                return PacketPlaceholder(from: packet)
             case .ClientUUID:
-                return PacketConnectRequest(from: packet)
+                return PacketClientUUID(from: packet)
             case .ChestName:
-                return PacketConnectRequest(from: packet)
+                return PacketChestName(from: packet)
             case .CatchNPC:
-                return PacketConnectRequest(from: packet)
+                return PacketCatchNPC(from: packet)
             case .ReleaseNPC:
-                return PacketConnectRequest(from: packet)
+                return PacketReleaseNPC(from: packet)
             case .TravellingMerchantInventory:
-                return PacketConnectRequest(from: packet)
+                return PacketTravellingMerchantInventory(from: packet)
             case .TeleportationPotion:
-                return PacketConnectRequest(from: packet)
+                return PacketTeleportationPotion(from: packet)
             case .AnglerQuest:
-                return PacketConnectRequest(from: packet)
+                return PacketAnglerQuest(from: packet)
             case .CompleteAnglerQuest:
-                return PacketConnectRequest(from: packet)
+                return PacketCompleteAnglerQuest(from: packet)
             case .NumberOfAnglerQuestsCompleted:
-                return PacketConnectRequest(from: packet)
+                return PacketNumberOfAnglerQuestsCompleted(from: packet)
             case .CreateTemporaryAnimation:
-                return PacketConnectRequest(from: packet)
+                return PacketCreateTemporaryAnimation(from: packet)
             case .ReportInvasionProgress:
-                return PacketConnectRequest(from: packet)
+                return PacketReportInvasionProgress(from: packet)
             case .PlaceObject:
-                return PacketConnectRequest(from: packet)
+                return PacketPlaceObject(from: packet)
             case .SyncPlayerChestIndex:
-                return PacketConnectRequest(from: packet)
+                return PacketSyncPlayerChestIndex(from: packet)
             case .CreateCombatText:
-                return PacketConnectRequest(from: packet)
+                return PacketCreateCombatText(from: packet)
             case .LoadNetModule:
-                return PacketConnectRequest(from: packet)
+                return PacketLoadNetModule(from: packet)
             case .NpcKillCount:
-                return PacketConnectRequest(from: packet)
+                return PacketNpcKillCount(from: packet)
             case .PlayerStealth:
-                return PacketConnectRequest(from: packet)
+                return PacketPlayerStealth(from: packet)
             case .ForceItemIntoNearestChest:
-                return PacketConnectRequest(from: packet)
+                return PacketForceItemIntoNearestChest(from: packet)
             case .UpdateTileEntity:
-                return PacketConnectRequest(from: packet)
+                return PacketUpdateTileEntity(from: packet)
             case .PlaceTileEntity:
-                return PacketConnectRequest(from: packet)
+                return PacketPlaceTileEntity(from: packet)
             case .TweakItem:
-                return PacketConnectRequest(from: packet)
+                return PacketTweakItem(from: packet)
             case .PlaceItemFrame:
-                return PacketConnectRequest(from: packet)
+                return PacketPlaceItemFrame(from: packet)
             case .UpdateItemDrop:
-                return PacketConnectRequest(from: packet)
+                return PacketUpdateItemDrop(from: packet)
             case .EmoteBubble:
-                return PacketConnectRequest(from: packet)
+                return PacketEmoteBubble(from: packet)
             case .SyncExtraValue:
-                return PacketConnectRequest(from: packet)
+                return PacketSyncExtraValue(from: packet)
             case .SocialHandshake:
-                return PacketConnectRequest(from: packet)
+                return PacketSocialHandshake(from: packet)
             case .Deprecated:
-                return PacketConnectRequest(from: packet)
+                return PacketDeprecated(from: packet)
             case .KillPortal:
-                return PacketConnectRequest(from: packet)
+                return PacketKillPortal(from: packet)
             case .PlayerTeleportPortal:
-                return PacketConnectRequest(from: packet)
+                return PacketPlayerTeleportPortal(from: packet)
             case .NotifyPlayerNpcKilled:
-                return PacketConnectRequest(from: packet)
+                return PacketNotifyPlayerNpcKilled(from: packet)
             case .NotifyPlayerOfEvent:
-                return PacketConnectRequest(from: packet)
+                return PacketNotifyPlayerOfEvent(from: packet)
             case .UpdateMinionTarget:
-                return PacketConnectRequest(from: packet)
+                return PacketUpdateMinionTarget(from: packet)
             case .NpcTeleportPortal:
-                return PacketConnectRequest(from: packet)
+                return PacketNpcTeleportPortal(from: packet)
             case .UpdateShieldStrengths:
-                return PacketConnectRequest(from: packet)
+                return PacketUpdateShieldStrengths(from: packet)
             case .NebulaLevelUp:
-                return PacketConnectRequest(from: packet)
+                return PacketNebulaLevelUp(from: packet)
             case .MoonLordCountdown:
-                return PacketConnectRequest(from: packet)
+                return PacketMoonLordCountdown(from: packet)
             case .NpcShopItem:
-                return PacketConnectRequest(from: packet)
+                return PacketNpcShopItem(from: packet)
             case .GemLockToggle:
-                return PacketConnectRequest(from: packet)
+                return PacketGemLockToggle(from: packet)
             case .PoofOfSmoke:
-                return PacketConnectRequest(from: packet)
+                return PacketPoofOfSmoke(from: packet)
             case .SmartTextMessage:
-                return PacketConnectRequest(from: packet)
+                return PacketSmartTextMessage(from: packet)
             case .WiredCannonShot:
-                return PacketConnectRequest(from: packet)
+                return PacketWiredCannonShot(from: packet)
             case .MassWireOperation:
-                return PacketConnectRequest(from: packet)
+                return PacketMassWireOperation(from: packet)
             case .MassWireOperationPay:
-                return PacketConnectRequest(from: packet)
+                return PacketMassWireOperationPay(from: packet)
             case .ToggleParty:
-                return PacketConnectRequest(from: packet)
+                return PacketToggleParty(from: packet)
             case .TreeGrowFX:
-                return PacketConnectRequest(from: packet)
+                return PacketTreeGrowFX(from: packet)
             case .CrystalInvasionStart:
-                return PacketConnectRequest(from: packet)
+                return PacketCrystalInvasionStart(from: packet)
             case .CrystalInvasionWipeAll:
-                return PacketConnectRequest(from: packet)
+                return PacketCrystalInvasionWipeAll(from: packet)
             case .MinionAttackTargetUpdate:
-                return PacketConnectRequest(from: packet)
+                return PacketMinionAttackTargetUpdate(from: packet)
             case .CrystalInvasionSendWaitTime:
-                return PacketConnectRequest(from: packet)
+                return PacketCrystalInvasionSendWaitTime(from: packet)
             case .PlayerHurtV2:
-                return PacketConnectRequest(from: packet)
+                return PacketPlayerHurtV2(from: packet)
             case .PlayerDeathV2:
-                return PacketConnectRequest(from: packet)
+                return PacketPlayerDeathV2(from: packet)
             case .CreateCombatTextExtended:
-                return PacketConnectRequest(from: packet)
+                return PacketCreateCombatTextExtended(from: packet)
             }
         }
         return nil

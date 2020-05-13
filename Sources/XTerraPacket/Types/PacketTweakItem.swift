@@ -1,5 +1,5 @@
 //
-//  PacketNotifyPlayerNPCKilled.swift
+//  PacketTweakItem.swift
 //
 //
 //  Created by Quentin Berry on 5/7/20.
@@ -8,12 +8,11 @@
 import Foundation
 import SwiftyBytes
 
-public struct PacketNotifyPlayerNPCKilled: TerrariaPacket{
+public struct PacketTweakItem: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
-    public var packetType: TerrariaPacketType = .NotifyPlayerNpcKilled
+    public var packetType: TerrariaPacketType = .TweakItem
     public var payload: [UInt8] = []
-    public var npcId: Int16 = 0
     
     public init(){}
     
@@ -21,9 +20,7 @@ public struct PacketNotifyPlayerNPCKilled: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
-        let reader = BinaryReader(data)
-        self.npcId = try reader.readInt16()
+        print("Not Implemented")
     }
     public func encoded() -> [UInt8]{
         print("Not Implemented")
