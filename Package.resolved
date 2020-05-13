@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftyBytes",
+        "repositoryURL": "https://github.com/Xenoxiluna/SwiftyBytes.git",
+        "state": {
+          "branch": null,
+          "revision": "8accf08199a8a1ae664928c73f11327748874cc9",
+          "version": "0.2.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
