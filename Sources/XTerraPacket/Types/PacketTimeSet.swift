@@ -32,6 +32,12 @@ public struct PacketTimeSet: TerrariaPacket{
         self.moonModY = try reader.readInt16()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeBool(dayTime)
+        try writer.writeInt32(timeValue)
+        try writer.writeInt16(sunModY)
+        try writer.writeInt16(moonModY)
+        payload.append(contentsOf: writer.data)
     }
 }

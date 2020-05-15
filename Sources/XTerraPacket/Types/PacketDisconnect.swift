@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-//INCOMPLETE
-
 import Foundation
 import SwiftyBytes
 
@@ -15,6 +13,7 @@ public struct PacketDisconnect: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .Disconnect
     public var payload: [UInt8] = []
+    public var text: String = ""
     
     public init(){}
     
@@ -22,9 +21,14 @@ public struct PacketDisconnect: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.text = try reader.read7BitEncodedString()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.write7BitEncodedString(text, encoding: .utf8)
+        payload.append(contentsOf: writer.data)
     }
 }

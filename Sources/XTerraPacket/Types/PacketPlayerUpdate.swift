@@ -40,6 +40,16 @@ public struct PacketPlayerUpdate: TerrariaPacket{
         self.vely = try reader.readFloat32()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(control)
+        try writer.writeUInt8(pulley)
+        try writer.writeUInt8(item)
+        try writer.writeFloat32(x)
+        try writer.writeFloat32(y)
+        try writer.writeFloat32(velx)
+        try writer.writeFloat32(vely)
+        payload.append(contentsOf: writer.data)
     }
 }

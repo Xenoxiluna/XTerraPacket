@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-//Incomplete
-
 import Foundation
 import SwiftyBytes
 
@@ -35,6 +33,10 @@ public struct PacketPlayerBuff: TerrariaPacket{
         }
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.write(buffs)
+        payload.append(contentsOf: writer.data)
     }
 }

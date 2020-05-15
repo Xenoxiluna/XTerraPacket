@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-//Incomplete
-
 import Foundation
 import SwiftyBytes
 
@@ -78,6 +76,24 @@ public struct PacketPlayerInfo: TerrariaPacket{
         self.difficulty = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(skinVariant)
+        try writer.writeUInt8(hair)
+        try writer.write7BitEncodedString(name, encoding: .utf8)
+        try writer.writeUInt8(hairDye)
+        try writer.writeUInt8(hideVisuals)
+        try writer.writeUInt8(hideVisuals2)
+        try writer.writeUInt8(hideMisc)
+        try writer.write(hairColor)
+        try writer.write(skinColor)
+        try writer.write(eyeColor)
+        try writer.write(shirtColor)
+        try writer.write(underShirtColor)
+        try writer.write(pantsColor)
+        try writer.write(shoeColor)
+        try writer.writeUInt8(difficulty)
+        payload.append(contentsOf: writer.data)
     }
 }

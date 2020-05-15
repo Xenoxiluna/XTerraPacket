@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-// INCOMPLETE
-
 import Foundation
 import SwiftyBytes
 
@@ -27,9 +25,23 @@ public struct PacketChatText: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.playerId = try reader.readUInt8()
+        self.messageColorR = try reader.readUInt8()
+        self.messageColorG = try reader.readUInt8()
+        self.messageColorB = try reader.readUInt8()
+        self.message = try reader.read7BitEncodedString()
     }
+    
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(messageColorR)
+        try writer.writeUInt8(messageColorG)
+        try writer.writeUInt8(messageColorB)
+        try writer.write7BitEncodedString(message, encoding: .utf8)
+        payload.append(contentsOf: writer.data)
     }
 }

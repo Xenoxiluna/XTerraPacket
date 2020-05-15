@@ -34,6 +34,13 @@ public struct PacketSignNew: TerrariaPacket{
         self.playerId = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(signId)
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        try writer.write7BitEncodedString(text, encoding: .utf8)
+        try writer.writeUInt8(playerId)
+        payload.append(contentsOf: writer.data)
     }
 }

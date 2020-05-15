@@ -5,7 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-//INCOMPLETE
 import Foundation
 import SwiftyBytes
 
@@ -14,8 +13,6 @@ public struct PacketToggleParty: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .ToggleParty
     public var payload: [UInt8] = []
-    public static let MAX_ITEMS = 40
-    public var items: [Int16] = []
     
     public init(){}
     

@@ -45,5 +45,10 @@ public struct PacketProjectileNew: TerrariaPacket{
     }
     mutating public func encodePayload() throws{
         print("Not Implemented")
+        //self.resetPayload()
+        //let writer = BinaryWriter()
+        //try writer.writeInt32(healAmount)
+        //try writer.write7BitEncodedString(text, encoding: .utf8)
+        //payload.append(contentsOf: writer.data)
     }
 }

@@ -37,6 +37,11 @@ public struct PacketPlayerMana: TerrariaPacket{
         self.maxMana = try reader.readUInt16()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt16(mana)
+        try writer.writeUInt16(maxMana)
+        payload.append(contentsOf: writer.data)
     }
 }

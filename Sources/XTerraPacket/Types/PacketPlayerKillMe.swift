@@ -34,6 +34,13 @@ public struct PacketPlayerKillMe: TerrariaPacket{
         self.deathText = try reader.read7BitEncodedString()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(hitDirection)
+        try writer.writeInt16(damage)
+        try writer.writeBool(pvp)
+        try writer.write7BitEncodedString(deathText, encoding: .utf8)
+        payload.append(contentsOf: writer.data)
     }
 }

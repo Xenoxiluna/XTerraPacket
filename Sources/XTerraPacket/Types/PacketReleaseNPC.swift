@@ -32,6 +32,12 @@ public struct PacketReleaseNPC: TerrariaPacket{
         self.style = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt32(x)
+        try writer.writeInt32(y)
+        try writer.writeInt16(npcType)
+        try writer.writeUInt8(style)
+        payload.append(contentsOf: writer.data)
     }
 }

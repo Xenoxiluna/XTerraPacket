@@ -34,6 +34,10 @@ public struct PacketTileGetSection: TerrariaPacket{
         self.y = try reader.readUInt32()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt32(x)
+        try writer.writeUInt32(y)
+        payload.append(contentsOf: writer.data)
     }
 }

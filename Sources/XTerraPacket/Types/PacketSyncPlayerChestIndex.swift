@@ -28,6 +28,10 @@ public struct PacketSyncPlayerChestIndex: TerrariaPacket{
         self.chest = try reader.readInt16()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeInt16(chest)
+        payload.append(contentsOf: writer.data)
     }
 }

@@ -32,6 +32,12 @@ public struct PacketTeleport: TerrariaPacket{
         self.y = try reader.readFloat32()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(flags)
+        try writer.writeInt16(targetId)
+        try writer.writeFloat32(x)
+        try writer.writeFloat32(y)
+        payload.append(contentsOf: writer.data)
     }
 }

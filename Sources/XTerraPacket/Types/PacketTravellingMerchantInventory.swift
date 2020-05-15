@@ -29,6 +29,13 @@ public struct PacketTravellingMerchantInventory: TerrariaPacket{
         }
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        
+        for i in items{
+            try writer.writeInt16(i)
+        }
+        
+        payload.append(contentsOf: writer.data)
     }
 }

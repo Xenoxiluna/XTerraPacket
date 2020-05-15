@@ -32,6 +32,12 @@ public struct PacketSyncExtraValue: TerrariaPacket{
         self.y = try reader.readFloat32()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcIndex)
+        try writer.writeFloat32(extraValue)
+        try writer.writeFloat32(x)
+        try writer.writeFloat32(y)
+        payload.append(contentsOf: writer.data)
     }
 }

@@ -43,6 +43,13 @@ public struct PacketPlayerInventorySlot: TerrariaPacket{
         self.itemNetId = try reader.readInt16()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(slotId)
+        try writer.writeInt16(stack)
+        try writer.writeUInt8(prefix)
+        try writer.writeInt16(itemNetId)
+        payload.append(contentsOf: writer.data)
     }
 }

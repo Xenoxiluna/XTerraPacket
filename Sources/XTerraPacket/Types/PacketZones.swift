@@ -1,6 +1,6 @@
 //
 //  PacketZones.swift
-//  
+//
 //
 //  Created by Quentin Berry on 5/10/20.
 //
@@ -20,12 +20,10 @@ public struct PacketZones: TerrariaPacket{
     public var packetType: TerrariaPacketType = .Zones
     public var payload: [UInt8] = []
     public var playerId: UInt8 = 0
-    public var zone1: UInt16 = 0
-    public var zone2: UInt16 = 0
-    public var zone3: UInt16 = 0
-    public var zone4: UInt16 = 0
-    public var s5: UInt16 = 0
-    public var s6: UInt16 = 0
+    public var zone1: UInt8 = 0
+    public var zone2: UInt8 = 0
+    public var zone3: UInt8 = 0
+    public var zone4: UInt8 = 0
     
     public init(){}
     
@@ -36,14 +34,19 @@ public struct PacketZones: TerrariaPacket{
         let data = BinaryReadableData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
-        self.zone1 = try reader.readUInt16()
-        self.zone2 = try reader.readUInt16()
-        self.zone3 = try reader.readUInt16()
-        self.zone4 = try reader.readUInt16()
-        self.s5 = try reader.readUInt16()
-        self.s6 = try reader.readUInt16()
+        self.zone1 = try reader.readUInt8()
+        self.zone2 = try reader.readUInt8()
+        self.zone3 = try reader.readUInt8()
+        self.zone4 = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(zone1)
+        try writer.writeUInt8(zone2)
+        try writer.writeUInt8(zone3)
+        try writer.writeUInt8(zone4)
+        payload.append(contentsOf: writer.data)
     }
 }

@@ -30,6 +30,11 @@ public struct PacketUpdateGoodEvil: TerrariaPacket{
         self.crimson = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(good)
+        try writer.writeUInt8(evil)
+        try writer.writeUInt8(crimson)
+        payload.append(contentsOf: writer.data)
     }
 }

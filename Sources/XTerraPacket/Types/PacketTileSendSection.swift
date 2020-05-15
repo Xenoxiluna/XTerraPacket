@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-// INCOMPLETE
-
 import Foundation
 import SwiftyBytes
 
@@ -15,6 +13,7 @@ public struct PacketTileSendSection: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .TileSendSection
     public var payload: [UInt8] = []
+    public var tiles: [UInt8] = []
     
     public init(){}
     
@@ -22,9 +21,16 @@ public struct PacketTileSendSection: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.tiles = try reader.read(payload.count) // Find a way to read tile data
     }
     mutating public func encodePayload() throws{
         print("Not Implemented")
+        /*self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt32(healAmount)
+        try writer.write7BitEncodedString(text, encoding: .utf8)
+        payload.append(contentsOf: writer.data)*/
     }
 }

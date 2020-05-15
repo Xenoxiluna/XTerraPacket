@@ -48,6 +48,22 @@ public struct PacketUpdateTileEntity: TerrariaPacket{
         }
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt32(key)
+        try writer.writeBool(isRemove)
+        if !self.isRemove {
+            try writer.writeUInt8(tileEntityType)
+            try writer.writeInt32(tileId)
+            try writer.writeInt16(x)
+            try writer.writeInt16(y)
+            if self.tileEntityType == 0 {
+                try writer.writeInt16(npc)
+            }
+            try writer.writeInt16(itemType)
+            try writer.writeUInt8(prefix)
+            try writer.writeInt16(stack)
+        }
+        payload.append(contentsOf: writer.data)
     }
 }

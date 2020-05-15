@@ -28,6 +28,10 @@ public struct PacketPlayHarp: TerrariaPacket{
         self.note = try reader.readFloat32()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeFloat32(note)
+        payload.append(contentsOf: writer.data)
     }
 }

@@ -32,6 +32,12 @@ public struct PacketReportInvasionProgress: TerrariaPacket{
         self.wave = try reader.readInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt32(progress)
+        try writer.writeInt32(maxProgress)
+        try writer.writeInt8(icon)
+        try writer.writeInt8(wave)
+        payload.append(contentsOf: writer.data)
     }
 }

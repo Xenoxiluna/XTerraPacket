@@ -37,6 +37,11 @@ public struct PacketPlayerSpawn: TerrariaPacket{
         self.spawnY = try reader.readInt16()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeInt16(spawnX)
+        try writer.writeInt16(spawnY)
+        payload.append(contentsOf: writer.data)
     }
 }
