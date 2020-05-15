@@ -33,14 +33,7 @@ public struct PacketTileGetSection: TerrariaPacket{
         self.x = try reader.readUInt32()
         self.y = try reader.readUInt32()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

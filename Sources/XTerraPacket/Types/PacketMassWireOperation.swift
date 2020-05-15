@@ -33,14 +33,14 @@ public struct PacketMassWireOperation: TerrariaPacket{
         self.endY = try reader.readInt16()
         self.toolMode = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(startX)
+        try writer.writeInt16(startY)
+        try writer.writeInt16(endX)
+        try writer.writeInt16(endY)
+        try writer.writeUInt8(toolMode)
+        payload.append(contentsOf: writer.data)
     }
 }

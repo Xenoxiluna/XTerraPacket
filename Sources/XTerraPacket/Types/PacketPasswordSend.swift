@@ -25,14 +25,10 @@ public struct PacketPasswordSend: TerrariaPacket{
         let reader = BinaryReader(data)
         self.password = try reader.read7BitEncodedString()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.write7BitEncodedString(password, encoding: .utf8)
+        payload.append(contentsOf: writer.data)
     }
 }

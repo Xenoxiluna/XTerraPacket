@@ -5,6 +5,8 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
+//Incomplete
+
 import Foundation
 import SwiftyBytes
 
@@ -32,14 +34,7 @@ public struct PacketPlayerBuff: TerrariaPacket{
             buffs += [try reader.readUInt8()]
         }
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

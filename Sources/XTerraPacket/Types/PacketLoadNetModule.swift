@@ -61,15 +61,13 @@ public struct PacketLoadNetModule: TerrariaPacket{
         
         self.message = try reader.read7BitEncodedString()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt16(netModuleId)
+        try writer.write7BitEncodedString(command.rawValue, encoding: .utf8)
+        try writer.write7BitEncodedString(message, encoding: .utf8)
+        payload.append(contentsOf: writer.data)
     }
     
     public enum CommandType: String{

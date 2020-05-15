@@ -43,14 +43,7 @@ public struct PacketTileSendSquare: TerrariaPacket{
 
         self.tilePayload = try reader.read(reader.data.data.count - reader.readIndex)
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

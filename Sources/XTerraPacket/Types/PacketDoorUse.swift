@@ -31,14 +31,13 @@ public struct PacketDoorUse: TerrariaPacket{
         self.tileY = try reader.readInt16()
         self.direction = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(action)
+        try writer.writeInt16(tileX)
+        try writer.writeInt16(tileY)
+        try writer.writeUInt8(direction)
+        payload.append(contentsOf: writer.data)
     }
 }

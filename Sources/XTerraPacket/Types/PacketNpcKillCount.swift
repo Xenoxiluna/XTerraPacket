@@ -27,14 +27,11 @@ public struct PacketNpcKillCount: TerrariaPacket{
         self.npcType = try reader.readInt16()
         self.killCount = try reader.readInt32()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcType)
+        try writer.writeInt32(killCount)
+        payload.append(contentsOf: writer.data)
     }
 }

@@ -29,14 +29,12 @@ public struct PacketPaintWall: TerrariaPacket{
         self.y = try reader.readInt16()
         self.color = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        try writer.writeUInt8(color)
+        payload.append(contentsOf: writer.data)
     }
 }

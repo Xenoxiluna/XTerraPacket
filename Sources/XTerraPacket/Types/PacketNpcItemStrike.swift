@@ -27,14 +27,11 @@ public struct PacketNpcItemStrike: TerrariaPacket{
         self.npcId = try reader.readInt16()
         self.playerId = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcId)
+        try writer.writeUInt8(playerId)
+        payload.append(contentsOf: writer.data)
     }
 }

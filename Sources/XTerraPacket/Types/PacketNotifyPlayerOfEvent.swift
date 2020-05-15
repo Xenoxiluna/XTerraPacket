@@ -25,14 +25,10 @@ public struct PacketNotifyPlayerOfEvent: TerrariaPacket{
         let reader = BinaryReader(data)
         self.eventId = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(eventId)
+        payload.append(contentsOf: writer.data)
     }
 }

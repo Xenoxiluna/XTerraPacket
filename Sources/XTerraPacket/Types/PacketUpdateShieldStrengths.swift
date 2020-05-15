@@ -31,14 +31,13 @@ public struct PacketUpdateShieldStrengths: TerrariaPacket{
         self.nebulaTowerShield = try reader.readUInt16()
         self.stardustTowerShield = try reader.readUInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt16(solarTowerShield)
+        try writer.writeUInt16(vortexTowerShield)
+        try writer.writeUInt16(nebulaTowerShield)
+        try writer.writeUInt16(stardustTowerShield)
+        payload.append(contentsOf: writer.data)
     }
 }

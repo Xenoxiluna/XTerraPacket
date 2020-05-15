@@ -29,14 +29,12 @@ public struct PacketUpdateMinionTarget: TerrariaPacket{
         self.targetX = try reader.readFloat32()
         self.targetY = try reader.readFloat32()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeFloat32(targetX)
+        try writer.writeFloat32(targetY)
+        payload.append(contentsOf: writer.data)
     }
 }

@@ -37,14 +37,16 @@ public struct PacketPlaceObject: TerrariaPacket{
         self.random = try reader.readInt8()
         self.direction = try reader.readBool()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        try writer.writeInt16(type)
+        try writer.writeInt16(style)
+        try writer.writeUInt8(alternate)
+        try writer.writeInt8(random)
+        try writer.writeBool(direction)
+        payload.append(contentsOf: writer.data)
     }
 }

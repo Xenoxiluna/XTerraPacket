@@ -5,6 +5,8 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
+// INCOMPLETE
+
 import Foundation
 import SwiftyBytes
 
@@ -39,14 +41,7 @@ public struct PacketEmoteBubble: TerrariaPacket{
             }
         }
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

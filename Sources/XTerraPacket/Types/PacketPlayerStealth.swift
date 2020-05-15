@@ -27,14 +27,11 @@ public struct PacketPlayerStealth: TerrariaPacket{
         self.playerId = try reader.readUInt8()
         self.stealth = try reader.readFloat32()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeFloat32(stealth)
+        payload.append(contentsOf: writer.data)
     }
 }

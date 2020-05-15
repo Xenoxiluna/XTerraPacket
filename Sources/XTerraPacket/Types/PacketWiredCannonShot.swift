@@ -37,14 +37,16 @@ public struct PacketWiredCannonShot: TerrariaPacket{
         self.ammo = try reader.readUInt16()
         self.playerId = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt16(damage)
+        try writer.writeFloat32(knockback)
+        try writer.writeUInt16(x)
+        try writer.writeUInt16(y)
+        try writer.writeUInt16(angle)
+        try writer.writeUInt16(ammo)
+        try writer.writeUInt8(playerId)
+        payload.append(contentsOf: writer.data)
     }
 }

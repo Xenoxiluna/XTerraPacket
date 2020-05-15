@@ -5,6 +5,8 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
+// Incomplete
+
 import Foundation
 import SwiftyBytes
 
@@ -27,14 +29,7 @@ public struct PacketWorldInfo: TerrariaPacket{
         }
         print("Not Implemented")
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
+// incomplete
+
 import Foundation
 import SwiftyBytes
 
@@ -130,14 +132,7 @@ public struct PacketLegacyWorldInfo: TerrariaPacket{
         self.lobby = try reader.readUInt64()
         self.sandstormSeverity = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

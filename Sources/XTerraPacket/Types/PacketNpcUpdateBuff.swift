@@ -45,14 +45,20 @@ public struct PacketNpcUpdateBuff: TerrariaPacket{
         self.buffId5 = try reader.readUInt8()
         self.time5 = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcId)
+        try writer.writeUInt8(buffId1)
+        try writer.writeInt16(time1)
+        try writer.writeUInt8(buffId2)
+        try writer.writeInt16(time2)
+        try writer.writeUInt8(buffId3)
+        try writer.writeInt16(time3)
+        try writer.writeUInt8(buffId4)
+        try writer.writeInt16(time4)
+        try writer.writeUInt8(buffId5)
+        try writer.writeInt16(time5)
+        payload.append(contentsOf: writer.data)
     }
 }

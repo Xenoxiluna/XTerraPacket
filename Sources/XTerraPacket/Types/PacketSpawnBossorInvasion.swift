@@ -27,14 +27,11 @@ public struct PacketSpawnBossorInvasion: TerrariaPacket{
         self.playerId = try reader.readInt16()
         self.spawnType = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(playerId)
+        try writer.writeInt16(spawnType)
+        payload.append(contentsOf: writer.data)
     }
 }

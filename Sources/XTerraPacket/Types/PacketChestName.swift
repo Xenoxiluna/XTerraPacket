@@ -31,14 +31,13 @@ public struct PacketChestName: TerrariaPacket{
         self.chestY = try reader.readInt16()
         self.name = try reader.read7BitEncodedString()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(chestId)
+        try writer.writeInt16(chestX)
+        try writer.writeInt16(chestY)
+        try writer.write7BitEncodedString(name, encoding: .utf8)
+        payload.append(contentsOf: writer.data)
     }
 }

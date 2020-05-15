@@ -35,14 +35,15 @@ public struct PacketNpcShopItem: TerrariaPacket{
         self.value = try reader.readInt32()
         self.flags = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(slot)
+        try writer.writeInt16(itemType)
+        try writer.writeInt16(stack)
+        try writer.writeUInt8(prefix)
+        try writer.writeInt32(value)
+        try writer.writeUInt8(flags)
+        payload.append(contentsOf: writer.data)
     }
 }

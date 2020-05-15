@@ -31,14 +31,12 @@ public struct PacketNebulaLevelUp: TerrariaPacket{
         self.originX = try reader.readFloat32()
         self.originY = try reader.readFloat32()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(levelUpType)
+        try writer.writeFloat32(originX)
+        try writer.writeFloat32(originY)
+        payload.append(contentsOf: writer.data)
     }
 }

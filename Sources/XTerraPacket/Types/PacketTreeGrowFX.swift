@@ -33,14 +33,14 @@ public struct PacketTreeGrowFX: TerrariaPacket{
         self.height = try reader.readUInt8()
         self.treeGore = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeBool(growEffect)
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        try writer.writeUInt8(height)
+        try writer.writeInt16(treeGore)
+        payload.append(contentsOf: writer.data)
     }
 }

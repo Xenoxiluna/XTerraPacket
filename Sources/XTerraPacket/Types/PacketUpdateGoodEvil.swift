@@ -29,14 +29,7 @@ public struct PacketUpdateGoodEvil: TerrariaPacket{
         self.evil = try reader.readUInt8()
         self.crimson = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

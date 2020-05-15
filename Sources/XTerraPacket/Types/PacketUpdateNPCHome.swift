@@ -31,14 +31,13 @@ public struct PacketUpdateNPCHome: TerrariaPacket{
         self.homeTileY = try reader.readInt16()
         self.homeless = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcId)
+        try writer.writeInt16(homeTileX)
+        try writer.writeInt16(homeTileY)
+        try writer.writeUInt8(homeless)
+        payload.append(contentsOf: writer.data)
     }
 }

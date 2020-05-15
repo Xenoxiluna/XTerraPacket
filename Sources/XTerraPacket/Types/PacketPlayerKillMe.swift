@@ -33,14 +33,7 @@ public struct PacketPlayerKillMe: TerrariaPacket{
         self.pvp = try reader.readBool()
         self.deathText = try reader.read7BitEncodedString()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

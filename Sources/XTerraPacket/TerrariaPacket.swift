@@ -15,11 +15,8 @@ public protocol TerrariaPacket{
     var payload: [UInt8] {get set}
     
     init()
-    
-    func getLength()
-    func encoded() -> [UInt8]
-    
-    mutating func encode()
+
+    mutating func encodePayload() throws
     mutating func decodePayload() throws
 }
 
@@ -51,5 +48,40 @@ extension TerrariaPacket{
             self.packetType = ptype
         }
         self.payload = try packetReader.read(Data(self.bytes).count - packetReader.readIndex)
+    }
+    
+    mutating public func encode() throws{
+        try encodePayload()
+        calculateLength()
+        try encodeHeader()
+    }
+    
+    mutating public func encoded() throws -> [UInt8]{
+        try encode()
+        return bytes
+    }
+    
+    mutating public func encodeHeader() throws{
+        resetBytes()
+        let writer = BinaryWriter()
+        try writer.writeUInt16(length)
+        try writer.writeUInt8(packetType.rawValue)
+        bytes.append(contentsOf: writer.data)
+    }
+    
+    mutating public func calculateLength(){
+        length = UInt16(payload.count + 3)
+    }
+    
+    public func getLength() -> UInt16 {
+        return length
+    }
+    
+    mutating func resetPayload(){
+        self.payload = []
+    }
+    
+    mutating func resetBytes(){
+        self.bytes = []
     }
 }

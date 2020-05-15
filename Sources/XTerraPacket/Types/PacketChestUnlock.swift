@@ -29,14 +29,12 @@ public struct PacketChestUnlock: TerrariaPacket{
         self.x = try reader.readInt16()
         self.y = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(chestType)
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        payload.append(contentsOf: writer.data)
     }
 }

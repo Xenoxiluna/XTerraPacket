@@ -35,14 +35,14 @@ public struct PacketNpcTeleportPortal: TerrariaPacket{
         self.velocityX = try reader.readFloat32()
         self.velocityY = try reader.readFloat32()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(portalColorIndex)
+        try writer.writeFloat32(newPositionX)
+        try writer.writeFloat32(newPositionY)
+        try writer.writeFloat32(velocityX)
+        try writer.writeFloat32(velocityY)
+        payload.append(contentsOf: writer.data)
     }
 }

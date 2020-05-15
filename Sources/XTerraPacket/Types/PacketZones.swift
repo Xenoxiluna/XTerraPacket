@@ -43,14 +43,7 @@ public struct PacketZones: TerrariaPacket{
         self.s5 = try reader.readUInt16()
         self.s6 = try reader.readUInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

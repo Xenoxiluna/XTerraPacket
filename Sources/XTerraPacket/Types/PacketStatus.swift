@@ -30,14 +30,7 @@ public struct PacketStatus: TerrariaPacket{
         self.text = try reader.read7BitEncodedString()
         // Incomplete
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

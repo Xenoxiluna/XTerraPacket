@@ -36,14 +36,12 @@ public struct PacketPlayerHp: TerrariaPacket{
         self.life = try reader.readUInt16()
         self.maxLife = try reader.readUInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt16(life)
+        try writer.writeUInt16(maxLife)
+        payload.append(contentsOf: writer.data)
     }
 }

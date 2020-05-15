@@ -25,14 +25,10 @@ public struct PacketPoofOfSmoke: TerrariaPacket{
         let reader = BinaryReader(data)
         self.packedVector = try reader.readInt32()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt32(packedVector)
+        payload.append(contentsOf: writer.data)
     }
 }

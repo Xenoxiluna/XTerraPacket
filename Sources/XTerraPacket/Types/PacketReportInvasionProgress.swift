@@ -31,14 +31,7 @@ public struct PacketReportInvasionProgress: TerrariaPacket{
         self.icon = try reader.readInt8()
         self.wave = try reader.readInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

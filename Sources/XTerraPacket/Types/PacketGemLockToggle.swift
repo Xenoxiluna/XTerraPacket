@@ -29,14 +29,12 @@ public struct PacketGemLockToggle: TerrariaPacket{
         self.y = try reader.readInt16()
         self.on = try reader.readBool()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        try writer.writeBool(on)
+        payload.append(contentsOf: writer.data)
     }
 }

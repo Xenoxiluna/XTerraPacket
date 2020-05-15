@@ -33,14 +33,14 @@ public struct PacketNpcStrike: TerrariaPacket{
         self.direction = try reader.readUInt8()
         self.crit = try reader.readBool()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcId)
+        try writer.writeInt16(damage)
+        try writer.writeFloat32(knockback)
+        try writer.writeUInt8(direction)
+        try writer.writeBool(crit)
+        payload.append(contentsOf: writer.data)
     }
 }

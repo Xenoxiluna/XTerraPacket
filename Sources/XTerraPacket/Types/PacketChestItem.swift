@@ -33,14 +33,14 @@ public struct PacketChestItem: TerrariaPacket{
         self.prefix = try reader.readUInt8()
         self.itemNetId = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(chestId)
+        try writer.writeUInt8(itemSlot)
+        try writer.writeInt16(stack)
+        try writer.writeUInt8(prefix)
+        try writer.writeInt16(itemNetId)
+        payload.append(contentsOf: writer.data)
     }
 }

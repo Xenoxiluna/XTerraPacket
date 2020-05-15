@@ -42,14 +42,7 @@ public struct PacketPlayerInventorySlot: TerrariaPacket{
         self.prefix = try reader.readUInt8()
         self.itemNetId = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
+    mutating public func encodePayload() throws{
         print("Not Implemented")
     }
 }

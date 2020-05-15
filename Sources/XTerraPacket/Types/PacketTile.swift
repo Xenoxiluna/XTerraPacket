@@ -33,14 +33,14 @@ public struct PacketTile: TerrariaPacket{
         self.var1 = try reader.readInt16()
         self.var2 = try reader.readUInt8()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(action)
+        try writer.writeInt16(tileX)
+        try writer.writeInt16(tileY)
+        try writer.writeInt16(var1)
+        try writer.writeUInt8(var2)
+        payload.append(contentsOf: writer.data)
     }
 }

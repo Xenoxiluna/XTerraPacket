@@ -29,14 +29,12 @@ public struct PacketPlayerAnimation: TerrariaPacket{
         self.itemRotation = try reader.readFloat32()
         self.itemAnimation = try reader.readInt16()
     }
-    public func encoded() -> [UInt8]{
-        print("Not Implemented")
-        return []
-    }
-    mutating public func encode(){
-        print("Not Implemented")
-    }
-    public func getLength(){
-        print("Not Implemented")
+    mutating public func encodePayload() throws{
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeFloat32(itemRotation)
+        try writer.writeInt16(itemAnimation)
+        payload.append(contentsOf: writer.data)
     }
 }
