@@ -256,6 +256,46 @@ public enum TerrariaPacketFactory{
                 return PacketPlayerDeathV2(from: packet)
             case .CreateCombatTextExtended:
                 return PacketCreateCombatTextExtended(from: packet)
+            case .Emoji:
+                return PacketEmoji(from: packet)
+            case .TileEntityDisplayDollItemSync:
+                return PacketTileEntityDisplayDollItemSync(from: packet)
+            case .RequestTileEntityInteraction:
+                return PacketRequestTileEntityInteraction(from: packet)
+            case .WeaponsRackTryPlacing:
+                return PacketWeaponsRackTryPlacing(from: packet)
+            case .TileEntityHatRackItemSync:
+                return PacketTileEntityHatRackItemSync(from: packet)
+            case .SyncTilePicking:
+                return PacketSyncTilePicking(from: packet)
+            case .SyncRevengeMarker:
+                return PacketSyncRevengeMarker(from: packet)
+            case .RemoveRevengeMarker:
+                return PacketRemoveRevengeMarker(from: packet)
+            case .LandGolfBallInCup:
+                return PacketLandGolfBallInCup(from: packet)
+            case .FinishedConnectingToServer:
+                return PacketFinishedConnectingToServer(from: packet)
+            case .FishOutNPC:
+                return PacketFishOutNPC(from: packet)
+            case .TamperWithNPC:
+                return PacketTamperWithNPC(from: packet)
+            case .PlayLegacySound:
+                return PacketPlayLegacySound(from: packet)
+            case .FoodPlatterTryPlacing:
+                return PacketFoodPlatterTryPlacing(from: packet)
+            case .UpdatePlayerLuckFactors:
+                return PacketUpdatePlayerLuckFactors(from: packet)
+            case .DeadPlayer:
+                return PacketDeadPlayer(from: packet)
+            case .SyncCavernMonsterType:
+                return PacketSyncCavernMonsterType(from: packet)
+            case .RequestNPCBuffRemoval:
+                return PacketRequestNPCBuffRemoval(from: packet)
+            case .ClientSyncedInventory:
+                return PacketClientSyncedInventory(from: packet)
+            case .SetCountsAsHostForGameplay:
+                return PacketSetCountsAsHostForGameplay(from: packet)
             }
         }
         return nil

@@ -130,4 +130,24 @@ public enum TerrariaPacketType: UInt8
     case PlayerHurtV2 = 117
     case PlayerDeathV2 = 118
     case CreateCombatTextExtended = 119
+    case Emoji = 120
+    case TileEntityDisplayDollItemSync = 121
+    case RequestTileEntityInteraction = 122
+    case WeaponsRackTryPlacing = 123
+    case TileEntityHatRackItemSync = 124
+    case SyncTilePicking = 125
+    case SyncRevengeMarker = 126
+    case RemoveRevengeMarker = 127
+    case LandGolfBallInCup = 128
+    case FinishedConnectingToServer = 129
+    case FishOutNPC = 130
+    case TamperWithNPC = 131
+    case PlayLegacySound = 132
+    case FoodPlatterTryPlacing = 133
+    case UpdatePlayerLuckFactors = 134
+    case DeadPlayer = 135
+    case SyncCavernMonsterType = 136
+    case RequestNPCBuffRemoval = 137
+    case ClientSyncedInventory = 138
+    case SetCountsAsHostForGameplay = 139
 }
