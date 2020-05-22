@@ -15,6 +15,7 @@ public struct PacketUpdateNPCName: TerrariaPacket{
     public var payload: [UInt8] = []
     public var npcId: Int16 = 0
     public var name: String = ""
+    public var townNpcVariationIndex: Int32 = 0
     
     public init(){}
     
@@ -28,8 +29,14 @@ public struct PacketUpdateNPCName: TerrariaPacket{
         if (reader.data.data.count > reader.readIndex) {
             self.name = try reader.read7BitEncodedString()
         }
+        self.townNpcVariationIndex = try reader.readInt32()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcId)
+        try writer.write7BitEncodedString(name, encoding: .utf8)
+        try writer.writeInt32(townNpcVariationIndex)
+        payload.append(contentsOf: writer.data)
     }
 }

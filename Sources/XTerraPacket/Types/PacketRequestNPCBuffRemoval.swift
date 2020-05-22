@@ -13,6 +13,8 @@ public struct PacketRequestNPCBuffRemoval: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .RequestNPCBuffRemoval
     public var payload: [UInt8] = []
+    public var npcId: Int16 = 0
+    public var buffTypeToRemove: UInt16 = 0
     
     public init(){}
     
@@ -20,9 +22,16 @@ public struct PacketRequestNPCBuffRemoval: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.npcId = try reader.readInt16()
+        self.buffTypeToRemove = try reader.readUInt16()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(npcId)
+        try writer.writeUInt16(buffTypeToRemove)
+        payload.append(contentsOf: writer.data)
     }
 }

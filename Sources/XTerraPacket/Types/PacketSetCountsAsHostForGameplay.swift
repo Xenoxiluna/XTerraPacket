@@ -13,6 +13,8 @@ public struct PacketSetCountsAsHostForGameplay: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .SetCountsAsHostForGameplay
     public var payload: [UInt8] = []
+    public var id: UInt8 = 0
+    public var value: Bool = false
     
     public init(){}
     
@@ -20,9 +22,16 @@ public struct PacketSetCountsAsHostForGameplay: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.id = try reader.readUInt8()
+        self.value = try reader.readBool()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(id)
+        try writer.writeBool(value)
+        payload.append(contentsOf: writer.data)
     }
 }

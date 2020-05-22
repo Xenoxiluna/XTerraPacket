@@ -13,6 +13,7 @@ public struct PacketSyncCavernMonsterType: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .SyncCavernMonsterType
     public var payload: [UInt8] = []
+    public var cavernMonsterType: [[UInt16]] = []
     
     public init(){}
     
@@ -20,9 +21,22 @@ public struct PacketSyncCavernMonsterType: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        for k in 0..<2 {
+            for l in 0..<3 {
+                self.cavernMonsterType[k][l] = try reader.readUInt16()
+            }
+        }
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        for k in 0..<2 {
+            for l in 0..<3 {
+                try writer.writeUInt16(self.cavernMonsterType[k][l])
+            }
+        }
+        payload.append(contentsOf: writer.data)
     }
 }
