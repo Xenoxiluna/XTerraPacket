@@ -20,6 +20,7 @@ public struct PacketPlayLegacySound: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
+        // Need BitsByte
         print("Not Implemented")
     }
     mutating public func encodePayload() throws{

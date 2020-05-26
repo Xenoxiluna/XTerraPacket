@@ -8,8 +8,7 @@
 
 import Foundation
 
-public enum TerrariaPacketType: UInt8
-{
+public enum TerrariaPacketType: UInt8 {
     case Other = 255
     case ConnectRequest = 1
     case Disconnect = 2

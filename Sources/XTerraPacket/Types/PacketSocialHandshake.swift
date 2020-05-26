@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-//IMCOMPLETE
-
 import Foundation
 import SwiftyBytes
 
@@ -22,9 +20,7 @@ public struct PacketSocialHandshake: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
     }
 }

@@ -13,6 +13,11 @@ public struct PacketFoodPlatterTryPlacing: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .FoodPlatterTryPlacing
     public var payload: [UInt8] = []
+    public var x: Int16 = 0
+    public var y: Int16 = 0
+    public var netId: Int16 = 0
+    public var prefix: UInt8 = 0
+    public var stack: Int16 = 0
     
     public init(){}
     
@@ -20,9 +25,22 @@ public struct PacketFoodPlatterTryPlacing: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.x = try reader.readInt16()
+        self.y = try reader.readInt16()
+        self.netId = try reader.readInt16()
+        self.prefix = try reader.readUInt8()
+        self.stack = try reader.readInt16()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        try writer.writeInt16(netId)
+        try writer.writeUInt8(prefix)
+        try writer.writeInt16(stack)
+        payload.append(contentsOf: writer.data)
     }
 }

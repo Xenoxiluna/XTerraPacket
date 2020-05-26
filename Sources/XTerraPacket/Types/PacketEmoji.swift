@@ -13,6 +13,8 @@ public struct PacketEmoji: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .Emoji
     public var payload: [UInt8] = []
+    public var playerId: UInt8 = 0
+    public var bubbleType: UInt8 = 0
     
     public init(){}
     
@@ -20,9 +22,16 @@ public struct PacketEmoji: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.playerId = try reader.readUInt8()
+        self.bubbleType = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(bubbleType)
+        payload.append(contentsOf: writer.data)
     }
 }
