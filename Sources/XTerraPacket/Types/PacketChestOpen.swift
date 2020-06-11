@@ -33,15 +33,22 @@ public struct PacketChestOpen: TerrariaPacket{
         self.chestX = try reader.readInt16()
         self.chestY = try reader.readInt16()
         self.nameLength = try reader.readUInt8()
-        self.chestName = ""
 
         if (self.nameLength >= 0 && self.nameLength <= 20){
             self.chestName = try reader.read7BitEncodedString()
-        }else{
-            self.nameLength = 0
         }
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeInt16(chestId)
+        try writer.writeInt16(chestX)
+        try writer.writeInt16(chestY)
+        try writer.writeUInt8(nameLength)
+        self.nameLength = UInt8(chestName.count)
+        
+        if (self.nameLength >= 0 && self.nameLength <= 20){
+            try writer.write7BitEncodedString(chestName, encoding: .utf8)
+        }
     }
 }
