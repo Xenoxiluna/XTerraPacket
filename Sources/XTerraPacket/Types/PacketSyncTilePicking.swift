@@ -13,6 +13,10 @@ public struct PacketSyncTilePicking: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .SyncTilePicking
     public var payload: [UInt8] = []
+    public var playerId: UInt8 = 0
+    public var x: Int16 = 0
+    public var y: Int16 = 0
+    public var pickDamage: UInt8 = 0
     
     public init(){}
     
@@ -20,9 +24,20 @@ public struct PacketSyncTilePicking: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.playerId = try reader.readUInt8()
+        self.x = try reader.readInt16()
+        self.y = try reader.readInt16()
+        self.pickDamage = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeInt16(x)
+        try writer.writeInt16(y)
+        try writer.writeUInt8(pickDamage)
+        payload.append(contentsOf: writer.data)
     }
 }

@@ -20,9 +20,8 @@ public struct PacketSyncPlayers: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        //empty packet
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
     }
 }

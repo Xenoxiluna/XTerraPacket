@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-// INCOMPLETE
-
 import Foundation
 import SwiftyBytes
 
@@ -50,5 +48,6 @@ public struct PacketChestOpen: TerrariaPacket{
         if (self.nameLength >= 0 && self.nameLength <= 20){
             try writer.write7BitEncodedString(chestName, encoding: .utf8)
         }
+        payload.append(contentsOf: writer.data)
     }
 }

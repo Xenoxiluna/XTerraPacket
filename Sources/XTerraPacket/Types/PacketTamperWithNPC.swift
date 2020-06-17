@@ -38,8 +38,10 @@ public struct PacketTamperWithNPC: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeUInt16(npcId)
         try writer.writeUInt8(check)
-        try writer.writeInt32(time)
-        try writer.writeInt16(fromWho)
+        if (self.check == 1) {
+            try writer.writeInt32(time)
+            try writer.writeInt16(fromWho)
+        }
         payload.append(contentsOf: writer.data)
     }
 }

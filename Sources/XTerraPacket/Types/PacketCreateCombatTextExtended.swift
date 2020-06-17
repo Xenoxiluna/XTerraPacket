@@ -5,8 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-// INCOMPLETE
-
 import Foundation
 import SwiftyBytes
 
@@ -15,6 +13,12 @@ public struct PacketCreateCombatTextExtended: TerrariaPacket{
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .CreateCombatTextExtended
     public var payload: [UInt8] = []
+    public var positionX: Float32 = 0
+    public var positionY: Float32 = 0
+    public var colorR: UInt8 = 0
+    public var colorG: UInt8 = 0
+    public var colorB: UInt8 = 0
+    public var combatText: String = ""
     
     public init(){}
     
@@ -22,9 +26,24 @@ public struct PacketCreateCombatTextExtended: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
+        let data = BinaryReadableData(data: self.payload)
+        let reader = BinaryReader(data)
+        self.positionX = try reader.readFloat32()
+        self.positionY = try reader.readFloat32()
+        self.colorR = try reader.readUInt8()
+        self.colorG = try reader.readUInt8()
+        self.colorB = try reader.readUInt8()
+        self.combatText = try reader.read7BitEncodedString()
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeFloat32(positionX)
+        try writer.writeFloat32(positionY)
+        try writer.writeUInt8(colorR)
+        try writer.writeUInt8(colorG)
+        try writer.writeUInt8(colorB)
+        try writer.write7BitEncodedString(combatText, encoding: .utf8)
+        payload.append(contentsOf: writer.data)
     }
 }

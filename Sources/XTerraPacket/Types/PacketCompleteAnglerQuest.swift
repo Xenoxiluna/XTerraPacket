@@ -20,9 +20,7 @@ public struct PacketCompleteAnglerQuest: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        print("Not Implemented")
     }
     mutating public func encodePayload() throws{
-        print("Not Implemented")
     }
 }

@@ -5,7 +5,6 @@
 //  Created by Quentin Berry on 5/7/20.
 //
 
-// INCOMPLETE
 import Foundation
 import SwiftyBytes
 
@@ -70,25 +69,39 @@ public struct PacketPlayerDeathV2: TerrariaPacket{
         self.flags = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
-//        self.resetPayload()
-//        let writer = BinaryWriter()
-//        try writer.writeUInt8(playerId)
-//        try writer.writeUInt8(skinVariant)
-//        try writer.writeUInt8(hair)
-//        try writer.write7BitEncodedString(name, encoding: .utf8)
-//        try writer.writeUInt8(hairDye)
-//        try writer.writeUInt8(hideVisuals)
-//        try writer.writeUInt8(hideVisuals2)
-//        try writer.writeUInt8(hideMisc)
-//        try writer.write(hairColor)
-//        try writer.write(skinColor)
-//        try writer.write(eyeColor)
-//        try writer.write(shirtColor)
-//        try writer.write(underShirtColor)
-//        try writer.write(pantsColor)
-//        try writer.write(shoeColor)
-//        try writer.writeUInt8(difficulty)
-//        payload.append(contentsOf: writer.data)
-        print("Not Implemented")
+        self.resetPayload()
+        let writer = BinaryWriter()
+        try writer.writeUInt8(playerId)
+        try writer.writeUInt8(playerDeathReason)
+        
+        if (self.playerDeathReason.bits[0] != 0){
+            try writer.writeInt16(fromPlayerIndex)
+        }
+        if (self.playerDeathReason.bits[1] != 0){
+            try writer.writeInt16(fromNpcIndex)
+        }
+        if (self.playerDeathReason.bits[2] != 0){
+            try writer.writeInt16(fromProjectileIndex)
+        }
+        if (self.playerDeathReason.bits[3] != 0){
+            try writer.writeUInt8(fromOther)
+        }
+        if (self.playerDeathReason.bits[4] != 0){
+            try writer.writeInt16(fromProjectileType)
+        }
+        if (self.playerDeathReason.bits[5] != 0){
+            try writer.writeInt16(fromItemType)
+        }
+        if (self.playerDeathReason.bits[6] != 0){
+            try writer.writeUInt8(fromItemPrefix)
+        }
+        if (self.playerDeathReason.bits[7] != 0){
+            try writer.write7BitEncodedString(fromCustomReason, encoding: .utf8)
+        }
+        
+        try writer.writeInt16(damage)
+        try writer.writeUInt8(hitDirection)
+        try writer.writeUInt8(flags)
+        payload.append(contentsOf: writer.data)
     }
 }
