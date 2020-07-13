@@ -1,10 +1,11 @@
-
-# WORK IN PROGRESS
 # `XTerraPacket`
-  Terraria Packet Library
+A Packet Library for encoding and decoding Terraria's network protocol packets.
 
  ## Usage
  Brief example using SwiftNIO for now... You can also look at [TerraProxy-CLI](https://github.com/Xenoxiluna/TerraProxy-CLI) for inspiration/uses.
+ 
+ ### Decode
+ You can decode an incoming packet's raw bytes like this:
 ```swift
 let packetData = bb.getBytes(at: 0, length: bb.readableBytes)!
 guard var packet = try? TerrariaPacketFactory.decodePacket(packet: packetData) else {
@@ -13,10 +14,16 @@ guard var packet = try? TerrariaPacketFactory.decodePacket(packet: packetData) e
     channel.writeAndFlush(NIOAny.init(bb), promise: nil)
     return
 }
+```
 
+Once you have a valid packet, you can view its type using the swifts dynamic type(of:) function or using the provided getType() protocol extension.
+```swift
 print("Swift Packet type: \(type(of: packet))")
 print("Packet Type: \(packet.getType())")
+```
 
+Form there, its possible to run the decode again to translate the payload. You could also just use the packets decodePayload() function.
+```swift
 do{
     try packet.decode()
     print("Decoded Packet Bytes: \(packet.bytes))")
@@ -34,6 +41,10 @@ default:
     print("")
 }
 ```
+ 
+ ### Encode
+ TODO
+ For now, See API Documentation for encode functionality.
  
  ## Dependencies
 
