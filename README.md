@@ -52,7 +52,7 @@ default:
  
  ## Dependencies
 
-- [SwiftyBytes 0.2.3](https://github.com/Xenoxiluna/SwiftyBytes)
+- [SwiftyBytes 0.4.0](https://github.com/Xenoxiluna/SwiftyBytes)
 
  ## License
 
