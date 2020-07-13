@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PacketSignRead Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/PacketSignRead" class="dashAnchor"></a>
+    <a title="PacketSignRead Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (16% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PacketSignRead Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TerrariaPacketFactory.html">TerrariaPacketFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TerrariaPacketType.html">TerrariaPacketType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TerrariaPacket.html">TerrariaPacket</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/PacketAnglerQuest.html">PacketAnglerQuest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCatchNPC.html">PacketCatchNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChatText.html">PacketChatText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestGetContents.html">PacketChestGetContents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestItem.html">PacketChestItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestName.html">PacketChestName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestOpen.html">PacketChestOpen</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestUnlock.html">PacketChestUnlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketClientSyncedInventory.html">PacketClientSyncedInventory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketClientUUID.html">PacketClientUUID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCompleteAnglerQuest.html">PacketCompleteAnglerQuest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketConnectApproval.html">PacketConnectApproval</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketConnectRequest.html">PacketConnectRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCreateCombatText.html">PacketCreateCombatText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCreateCombatTextExtended.html">PacketCreateCombatTextExtended</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCreateTemporaryAnimation.html">PacketCreateTemporaryAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCrystalInvasionSendWaitTime.html">PacketCrystalInvasionSendWaitTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCrystalInvasionStart.html">PacketCrystalInvasionStart</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCrystalInvasionWipeAll.html">PacketCrystalInvasionWipeAll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDeadPlayer.html">PacketDeadPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDeprecated.html">PacketDeprecated</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDisconnect.html">PacketDisconnect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDoorUse.html">PacketDoorUse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEffectHeal.html">PacketEffectHeal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEffectMana.html">PacketEffectMana</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEmoji.html">PacketEmoji</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEmoteBubble.html">PacketEmoteBubble</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketFinishedConnectingToServer.html">PacketFinishedConnectingToServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketFishOutNPC.html">PacketFishOutNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketFoodPlatterTryPlacing.html">PacketFoodPlatterTryPlacing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketForceItemIntoNearestChest.html">PacketForceItemIntoNearestChest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketGemLockToggle.html">PacketGemLockToggle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketHitSwitch.html">PacketHitSwitch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketItemDrop.html">PacketItemDrop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketItemOwner.html">PacketItemOwner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketKillPortal.html">PacketKillPortal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLandGolfBallInCup.html">PacketLandGolfBallInCup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLiquidSet.html">PacketLiquidSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLoadNetModule.html">PacketLoadNetModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLoadNetModule/CommandType.html">– CommandType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMassWireOperation.html">PacketMassWireOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMassWireOperationPay.html">PacketMassWireOperationPay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMinionAttackTargetUpdate.html">PacketMinionAttackTargetUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMoonLordCountdown.html">PacketMoonLordCountdown</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNebulaLevelUp.html">PacketNebulaLevelUp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNotifyPlayerNpcKilled.html">PacketNotifyPlayerNpcKilled</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNotifyPlayerOfEvent.html">PacketNotifyPlayerOfEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcAddBuff.html">PacketNpcAddBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcItemStrike.html">PacketNpcItemStrike</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcKillCount.html">PacketNpcKillCount</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcShopItem.html">PacketNpcShopItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcSpecial.html">PacketNpcSpecial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcStrike.html">PacketNpcStrike</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcTalk.html">PacketNpcTalk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcTeleportPortal.html">PacketNpcTeleportPortal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcUpdate.html">PacketNpcUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcUpdateBuff.html">PacketNpcUpdateBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNumberOfAnglerQuestsCompleted.html">PacketNumberOfAnglerQuestsCompleted</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPaintTile.html">PacketPaintTile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPaintWall.html">PacketPaintWall</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPasswordRequired.html">PacketPasswordRequired</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPasswordSend.html">PacketPasswordSend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceChest.html">PacketPlaceChest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceItemFrame.html">PacketPlaceItemFrame</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceObject.html">PacketPlaceObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceTileEntity.html">PacketPlaceTileEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceholder.html">PacketPlaceholder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayHarp.html">PacketPlayHarp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayLegacySound.html">PacketPlayLegacySound</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerActive.html">PacketPlayerActive</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerAddBuff.html">PacketPlayerAddBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerAnimation.html">PacketPlayerAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerBuff.html">PacketPlayerBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerDamage.html">PacketPlayerDamage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerDeathV2.html">PacketPlayerDeathV2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerDodge.html">PacketPlayerDodge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerHealOther.html">PacketPlayerHealOther</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerHp.html">PacketPlayerHp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerHurtV2.html">PacketPlayerHurtV2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerInfo.html">PacketPlayerInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerInventorySlot.html">PacketPlayerInventorySlot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerKillMe.html">PacketPlayerKillMe</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerMana.html">PacketPlayerMana</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerSpawn.html">PacketPlayerSpawn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerSpawnSelf.html">PacketPlayerSpawnSelf</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerStealth.html">PacketPlayerStealth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerTeam.html">PacketPlayerTeam</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerTeleportPortal.html">PacketPlayerTeleportPortal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerUpdate.html">PacketPlayerUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPoofOfSmoke.html">PacketPoofOfSmoke</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketProjectileDestroy.html">PacketProjectileDestroy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketProjectileNew.html">PacketProjectileNew</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketReleaseNPC.html">PacketReleaseNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRemoveItemOwner.html">PacketRemoveItemOwner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRemoveRevengeMarker.html">PacketRemoveRevengeMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketReportInvasionProgress.html">PacketReportInvasionProgress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRequestNPCBuffRemoval.html">PacketRequestNPCBuffRemoval</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRequestTileEntityInteraction.html">PacketRequestTileEntityInteraction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRequestWorldInfo.html">PacketRequestWorldInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSetCountsAsHostForGameplay.html">PacketSetCountsAsHostForGameplay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSignNew.html">PacketSignNew</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSignRead.html">PacketSignRead</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSmartTextMessage.html">PacketSmartTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSocialHandshake.html">PacketSocialHandshake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSpawnBossorInvasion.html">PacketSpawnBossorInvasion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketStatus.html">PacketStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncCavernMonsterType.html">PacketSyncCavernMonsterType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncExtraValue.html">PacketSyncExtraValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncPlayerChestIndex.html">PacketSyncPlayerChestIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncPlayers.html">PacketSyncPlayers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncRevengeMarker.html">PacketSyncRevengeMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncTilePicking.html">PacketSyncTilePicking</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTamperWithNPC.html">PacketTamperWithNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTeleport.html">PacketTeleport</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTeleportationPotion.html">PacketTeleportationPotion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTile.html">PacketTile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileEntityDisplayDollItemSync.html">PacketTileEntityDisplayDollItemSync</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileEntityHatRackItemSync.html">PacketTileEntityHatRackItemSync</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileFrameSection.html">PacketTileFrameSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileGetSection.html">PacketTileGetSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileSendSection.html">PacketTileSendSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileSendSquare.html">PacketTileSendSquare</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTimeSet.html">PacketTimeSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketToggleParty.html">PacketToggleParty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTogglePvp.html">PacketTogglePvp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTravellingMerchantInventory.html">PacketTravellingMerchantInventory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTreeGrowFX.html">PacketTreeGrowFX</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTweakItem.html">PacketTweakItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateGoodEvil.html">PacketUpdateGoodEvil</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateItemDrop.html">PacketUpdateItemDrop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateMinionTarget.html">PacketUpdateMinionTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateNPCHome.html">PacketUpdateNPCHome</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateNPCName.html">PacketUpdateNPCName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdatePlayerLuckFactors.html">PacketUpdatePlayerLuckFactors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateShieldStrengths.html">PacketUpdateShieldStrengths</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateTileEntity.html">PacketUpdateTileEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketWeaponsRackTryPlacing.html">PacketWeaponsRackTryPlacing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketWiredCannonShot.html">PacketWiredCannonShot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketWorldInfo.html">PacketWorldInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketZones.html">PacketZones</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PacketSignRead</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PacketSignRead</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TerrariaPacket.html">TerrariaPacket</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B8SignReadV5bytesSays5UInt8VGvp"></a>
+                    <a name="//apple_ref/swift/Property/bytes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B8SignReadV5bytesSays5UInt8VGvp">bytes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bytes</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B8SignReadV6lengths6UInt16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/length" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B8SignReadV6lengths6UInt16Vvp">length</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B8SignReadV10packetTypeAA08TerrariabF0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/packetType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B8SignReadV10packetTypeAA08TerrariabF0Ovp">packetType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">packetType</span><span class="p">:</span> <span class="kt"><a href="../Enums/TerrariaPacketType.html">TerrariaPacketType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B8SignReadV7payloadSays5UInt8VGvp"></a>
+                    <a name="//apple_ref/swift/Property/payload" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B8SignReadV7payloadSays5UInt8VGvp">payload</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B8SignReadV1xs5Int16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/x" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B8SignReadV1xs5Int16Vvp">x</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B8SignReadV1ys5Int16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/y" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B8SignReadV1ys5Int16Vvp">y</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Int16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B8SignReadVACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B8SignReadVACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket08TerrariaB0P13decodePayloadyyKF"></a>
+                    <a name="//apple_ref/swift/Method/decodePayload()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket08TerrariaB0P13decodePayloadyyKF">decodePayload()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">decodePayload</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket08TerrariaB0P13encodePayloadyyKF"></a>
+                    <a name="//apple_ref/swift/Method/encodePayload()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket08TerrariaB0P13encodePayloadyyKF">encodePayload()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">encodePayload</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

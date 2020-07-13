@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PacketWorldInfo Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/PacketWorldInfo" class="dashAnchor"></a>
+    <a title="PacketWorldInfo Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (16% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PacketWorldInfo Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/TerrariaPacketFactory.html">TerrariaPacketFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TerrariaPacketType.html">TerrariaPacketType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/TerrariaPacket.html">TerrariaPacket</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/PacketAnglerQuest.html">PacketAnglerQuest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCatchNPC.html">PacketCatchNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChatText.html">PacketChatText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestGetContents.html">PacketChestGetContents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestItem.html">PacketChestItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestName.html">PacketChestName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestOpen.html">PacketChestOpen</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketChestUnlock.html">PacketChestUnlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketClientSyncedInventory.html">PacketClientSyncedInventory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketClientUUID.html">PacketClientUUID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCompleteAnglerQuest.html">PacketCompleteAnglerQuest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketConnectApproval.html">PacketConnectApproval</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketConnectRequest.html">PacketConnectRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCreateCombatText.html">PacketCreateCombatText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCreateCombatTextExtended.html">PacketCreateCombatTextExtended</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCreateTemporaryAnimation.html">PacketCreateTemporaryAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCrystalInvasionSendWaitTime.html">PacketCrystalInvasionSendWaitTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCrystalInvasionStart.html">PacketCrystalInvasionStart</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketCrystalInvasionWipeAll.html">PacketCrystalInvasionWipeAll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDeadPlayer.html">PacketDeadPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDeprecated.html">PacketDeprecated</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDisconnect.html">PacketDisconnect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketDoorUse.html">PacketDoorUse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEffectHeal.html">PacketEffectHeal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEffectMana.html">PacketEffectMana</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEmoji.html">PacketEmoji</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketEmoteBubble.html">PacketEmoteBubble</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketFinishedConnectingToServer.html">PacketFinishedConnectingToServer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketFishOutNPC.html">PacketFishOutNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketFoodPlatterTryPlacing.html">PacketFoodPlatterTryPlacing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketForceItemIntoNearestChest.html">PacketForceItemIntoNearestChest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketGemLockToggle.html">PacketGemLockToggle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketHitSwitch.html">PacketHitSwitch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketItemDrop.html">PacketItemDrop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketItemOwner.html">PacketItemOwner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketKillPortal.html">PacketKillPortal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLandGolfBallInCup.html">PacketLandGolfBallInCup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLiquidSet.html">PacketLiquidSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLoadNetModule.html">PacketLoadNetModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketLoadNetModule/CommandType.html">– CommandType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMassWireOperation.html">PacketMassWireOperation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMassWireOperationPay.html">PacketMassWireOperationPay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMinionAttackTargetUpdate.html">PacketMinionAttackTargetUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketMoonLordCountdown.html">PacketMoonLordCountdown</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNebulaLevelUp.html">PacketNebulaLevelUp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNotifyPlayerNpcKilled.html">PacketNotifyPlayerNpcKilled</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNotifyPlayerOfEvent.html">PacketNotifyPlayerOfEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcAddBuff.html">PacketNpcAddBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcItemStrike.html">PacketNpcItemStrike</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcKillCount.html">PacketNpcKillCount</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcShopItem.html">PacketNpcShopItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcSpecial.html">PacketNpcSpecial</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcStrike.html">PacketNpcStrike</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcTalk.html">PacketNpcTalk</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcTeleportPortal.html">PacketNpcTeleportPortal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcUpdate.html">PacketNpcUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNpcUpdateBuff.html">PacketNpcUpdateBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketNumberOfAnglerQuestsCompleted.html">PacketNumberOfAnglerQuestsCompleted</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPaintTile.html">PacketPaintTile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPaintWall.html">PacketPaintWall</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPasswordRequired.html">PacketPasswordRequired</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPasswordSend.html">PacketPasswordSend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceChest.html">PacketPlaceChest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceItemFrame.html">PacketPlaceItemFrame</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceObject.html">PacketPlaceObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceTileEntity.html">PacketPlaceTileEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceholder.html">PacketPlaceholder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayHarp.html">PacketPlayHarp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayLegacySound.html">PacketPlayLegacySound</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerActive.html">PacketPlayerActive</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerAddBuff.html">PacketPlayerAddBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerAnimation.html">PacketPlayerAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerBuff.html">PacketPlayerBuff</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerDamage.html">PacketPlayerDamage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerDeathV2.html">PacketPlayerDeathV2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerDodge.html">PacketPlayerDodge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerHealOther.html">PacketPlayerHealOther</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerHp.html">PacketPlayerHp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerHurtV2.html">PacketPlayerHurtV2</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerInfo.html">PacketPlayerInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerInventorySlot.html">PacketPlayerInventorySlot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerKillMe.html">PacketPlayerKillMe</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerMana.html">PacketPlayerMana</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerSpawn.html">PacketPlayerSpawn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerSpawnSelf.html">PacketPlayerSpawnSelf</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerStealth.html">PacketPlayerStealth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerTeam.html">PacketPlayerTeam</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerTeleportPortal.html">PacketPlayerTeleportPortal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerUpdate.html">PacketPlayerUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPoofOfSmoke.html">PacketPoofOfSmoke</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketProjectileDestroy.html">PacketProjectileDestroy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketProjectileNew.html">PacketProjectileNew</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketReleaseNPC.html">PacketReleaseNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRemoveItemOwner.html">PacketRemoveItemOwner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRemoveRevengeMarker.html">PacketRemoveRevengeMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketReportInvasionProgress.html">PacketReportInvasionProgress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRequestNPCBuffRemoval.html">PacketRequestNPCBuffRemoval</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRequestTileEntityInteraction.html">PacketRequestTileEntityInteraction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketRequestWorldInfo.html">PacketRequestWorldInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSetCountsAsHostForGameplay.html">PacketSetCountsAsHostForGameplay</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSignNew.html">PacketSignNew</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSignRead.html">PacketSignRead</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSmartTextMessage.html">PacketSmartTextMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSocialHandshake.html">PacketSocialHandshake</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSpawnBossorInvasion.html">PacketSpawnBossorInvasion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketStatus.html">PacketStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncCavernMonsterType.html">PacketSyncCavernMonsterType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncExtraValue.html">PacketSyncExtraValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncPlayerChestIndex.html">PacketSyncPlayerChestIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncPlayers.html">PacketSyncPlayers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncRevengeMarker.html">PacketSyncRevengeMarker</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketSyncTilePicking.html">PacketSyncTilePicking</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTamperWithNPC.html">PacketTamperWithNPC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTeleport.html">PacketTeleport</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTeleportationPotion.html">PacketTeleportationPotion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTile.html">PacketTile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileEntityDisplayDollItemSync.html">PacketTileEntityDisplayDollItemSync</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileEntityHatRackItemSync.html">PacketTileEntityHatRackItemSync</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileFrameSection.html">PacketTileFrameSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileGetSection.html">PacketTileGetSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileSendSection.html">PacketTileSendSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTileSendSquare.html">PacketTileSendSquare</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTimeSet.html">PacketTimeSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketToggleParty.html">PacketToggleParty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTogglePvp.html">PacketTogglePvp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTravellingMerchantInventory.html">PacketTravellingMerchantInventory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTreeGrowFX.html">PacketTreeGrowFX</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketTweakItem.html">PacketTweakItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateGoodEvil.html">PacketUpdateGoodEvil</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateItemDrop.html">PacketUpdateItemDrop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateMinionTarget.html">PacketUpdateMinionTarget</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateNPCHome.html">PacketUpdateNPCHome</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateNPCName.html">PacketUpdateNPCName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdatePlayerLuckFactors.html">PacketUpdatePlayerLuckFactors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateShieldStrengths.html">PacketUpdateShieldStrengths</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketUpdateTileEntity.html">PacketUpdateTileEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketWeaponsRackTryPlacing.html">PacketWeaponsRackTryPlacing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketWiredCannonShot.html">PacketWiredCannonShot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketWorldInfo.html">PacketWorldInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketZones.html">PacketZones</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PacketWorldInfo</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PacketWorldInfo</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TerrariaPacket.html">TerrariaPacket</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Payload Structure
+Offset  |  Type  |  Description
+  1        UInt8    playerId
+  2        UInt8    slot
+  3-4     UInt16  stack
+  5        UInt8    prefix
+  6-7     UInt16  itemId</p>
+
+<hr>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV5bytesSays5UInt8VGvp"></a>
+                    <a name="//apple_ref/swift/Property/bytes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV5bytesSays5UInt8VGvp">bytes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bytes</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV6lengths6UInt16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/length" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV6lengths6UInt16Vvp">length</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10packetTypeAA08TerrariabF0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/packetType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10packetTypeAA08TerrariabF0Ovp">packetType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">packetType</span><span class="p">:</span> <span class="kt"><a href="../Enums/TerrariaPacketType.html">TerrariaPacketType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV7payloadSays5UInt8VGvp"></a>
+                    <a name="//apple_ref/swift/Property/payload" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV7payloadSays5UInt8VGvp">payload</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV4times6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/time" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV4times6UInt32Vvp">time</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV07dayMoonD0s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/dayMoonInfo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV07dayMoonD0s5UInt8Vvp">dayMoonInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">dayMoonInfo</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9moonPhases5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/moonPhase" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9moonPhases5UInt8Vvp">moonPhase</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">moonPhase</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9maxTilesXs6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/maxTilesX" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9maxTilesXs6UInt32Vvp">maxTilesX</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxTilesX</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9maxTilesYs6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/maxTilesY" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9maxTilesYs6UInt32Vvp">maxTilesY</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxTilesY</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV6spawnXs6UInt16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/spawnX" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV6spawnXs6UInt16Vvp">spawnX</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">spawnX</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV6spawnYs6UInt16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/spawnY" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV6spawnYs6UInt16Vvp">spawnY</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">spawnY</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV12worldSurfaces6UInt16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/worldSurface" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV12worldSurfaces6UInt16Vvp">worldSurface</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">worldSurface</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9rockLayers6UInt16Vvp"></a>
+                    <a name="//apple_ref/swift/Property/rockLayer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9rockLayers6UInt16Vvp">rockLayer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rockLayer</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV7worldIds6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/worldId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV7worldIds6UInt32Vvp">worldId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">worldId</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9worldNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/worldName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9worldNameSSvp">worldName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">worldName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV15worldNameOffsets6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/worldNameOffset" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV15worldNameOffsets6UInt32Vvp">worldNameOffset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">worldNameOffset</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV8moonTypes5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/moonType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV8moonTypes5UInt8Vvp">moonType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">moonType</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV14treeBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/treeBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV14treeBackgrounds5UInt8Vvp">treeBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">treeBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV20corruptionBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/corruptionBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV20corruptionBackgrounds5UInt8Vvp">corruptionBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">corruptionBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV16jungleBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/jungleBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV16jungleBackgrounds5UInt8Vvp">jungleBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">jungleBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV14snowBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/snowBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV14snowBackgrounds5UInt8Vvp">snowBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">snowBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV16hallowBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/hallowBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV16hallowBackgrounds5UInt8Vvp">hallowBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hallowBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV17crimsonBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/crimsonBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV17crimsonBackgrounds5UInt8Vvp">crimsonBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">crimsonBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV16desertBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/desertBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV16desertBackgrounds5UInt8Vvp">desertBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">desertBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV15oceanBackgrounds5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/oceanBackground" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV15oceanBackgrounds5UInt8Vvp">oceanBackground</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">oceanBackground</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV12iceBackStyles5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/iceBackStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV12iceBackStyles5UInt8Vvp">iceBackStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">iceBackStyle</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV15jungleBackStyles5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/jungleBackStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV15jungleBackStyles5UInt8Vvp">jungleBackStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">jungleBackStyle</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV13hellBackStyles5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/hellBackStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV13hellBackStyles5UInt8Vvp">hellBackStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hellBackStyle</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV12windSpeedSetSfvp"></a>
+                    <a name="//apple_ref/swift/Property/windSpeedSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV12windSpeedSetSfvp">windSpeedSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">windSpeedSet</span><span class="p">:</span> <span class="kt">Float32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV11cloudNumbers5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/cloudNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV11cloudNumbers5UInt8Vvp">cloudNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cloudNumber</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV5tree1s6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/tree1" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV5tree1s6UInt32Vvp">tree1</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tree1</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV5tree2s6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/tree2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV5tree2s6UInt32Vvp">tree2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tree2</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV5tree3s6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/tree3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV5tree3s6UInt32Vvp">tree3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tree3</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10treeStyle1s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/treeStyle1" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10treeStyle1s5UInt8Vvp">treeStyle1</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">treeStyle1</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10treeStyle2s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/treeStyle2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10treeStyle2s5UInt8Vvp">treeStyle2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">treeStyle2</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10treeStyle3s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/treeStyle3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10treeStyle3s5UInt8Vvp">treeStyle3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">treeStyle3</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10treeStyle4s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/treeStyle4" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10treeStyle4s5UInt8Vvp">treeStyle4</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">treeStyle4</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9caveBack1s6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/caveBack1" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9caveBack1s6UInt32Vvp">caveBack1</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">caveBack1</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9caveBack2s6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/caveBack2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9caveBack2s6UInt32Vvp">caveBack2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">caveBack2</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV9caveBack3s6UInt32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/caveBack3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV9caveBack3s6UInt32Vvp">caveBack3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">caveBack3</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV14caveBackStyle1s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/caveBackStyle1" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV14caveBackStyle1s5UInt8Vvp">caveBackStyle1</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">caveBackStyle1</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV14caveBackStyle2s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/caveBackStyle2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV14caveBackStyle2s5UInt8Vvp">caveBackStyle2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">caveBackStyle2</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV14caveBackStyle3s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/caveBackStyle3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV14caveBackStyle3s5UInt8Vvp">caveBackStyle3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">caveBackStyle3</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV14caveBackStyle4s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/caveBackStyle4" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV14caveBackStyle4s5UInt8Vvp">caveBackStyle4</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">caveBackStyle4</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV4rainSfvp"></a>
+                    <a name="//apple_ref/swift/Property/rain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV4rainSfvp">rain</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">rain</span><span class="p">:</span> <span class="kt">Float32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10eventInfo1s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/eventInfo1" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10eventInfo1s5UInt8Vvp">eventInfo1</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">eventInfo1</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10eventInfo2s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/eventInfo2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10eventInfo2s5UInt8Vvp">eventInfo2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">eventInfo2</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10eventInfo3s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/eventInfo3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10eventInfo3s5UInt8Vvp">eventInfo3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">eventInfo3</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10eventInfo4s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/eventInfo4" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10eventInfo4s5UInt8Vvp">eventInfo4</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">eventInfo4</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV10eventInfo5s5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/eventInfo5" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV10eventInfo5s5UInt8Vvp">eventInfo5</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">eventInfo5</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV12invasionTypes5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/invasionType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV12invasionTypes5UInt8Vvp">invasionType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">invasionType</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV5lobbys6UInt64Vvp"></a>
+                    <a name="//apple_ref/swift/Property/lobby" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV5lobbys6UInt64Vvp">lobby</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">lobby</span><span class="p">:</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoV17sandstormSeveritys5UInt8Vvp"></a>
+                    <a name="//apple_ref/swift/Property/sandstormSeverity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoV17sandstormSeveritys5UInt8Vvp">sandstormSeverity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">sandstormSeverity</span><span class="p">:</span> <span class="kt">UInt8</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket0B9WorldInfoVACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket0B9WorldInfoVACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket08TerrariaB0P13decodePayloadyyKF"></a>
+                    <a name="//apple_ref/swift/Method/decodePayload()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket08TerrariaB0P13decodePayloadyyKF">decodePayload()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">decodePayload</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket08TerrariaB0P13encodePayloadyyKF"></a>
+                    <a name="//apple_ref/swift/Method/encodePayload()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket08TerrariaB0P13encodePayloadyyKF">encodePayload()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">encodePayload</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-07-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
