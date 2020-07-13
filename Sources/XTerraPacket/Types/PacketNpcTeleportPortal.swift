@@ -26,7 +26,7 @@ public struct PacketNpcTeleportPortal: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.npcId = try reader.readUInt16()
         self.portalColorIndex = try reader.readInt16()
@@ -43,6 +43,6 @@ public struct PacketNpcTeleportPortal: TerrariaPacket{
         try writer.writeFloat32(newPositionY)
         try writer.writeFloat32(velocityX)
         try writer.writeFloat32(velocityY)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

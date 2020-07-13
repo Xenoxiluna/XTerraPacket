@@ -26,7 +26,7 @@ public struct PacketEmoteBubble: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.emoteID = try reader.readInt32()
         self.anchorType = try reader.readUInt8()
@@ -52,6 +52,6 @@ public struct PacketEmoteBubble: TerrariaPacket{
                 try writer.writeInt16(emoteMetaData)
             }
         }
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

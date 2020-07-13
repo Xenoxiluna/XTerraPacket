@@ -24,7 +24,7 @@ public struct PacketUpdateShieldStrengths: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.solarTowerShield = try reader.readUInt16()
         self.vortexTowerShield = try reader.readUInt16()
@@ -38,6 +38,6 @@ public struct PacketUpdateShieldStrengths: TerrariaPacket{
         try writer.writeUInt16(vortexTowerShield)
         try writer.writeUInt16(nebulaTowerShield)
         try writer.writeUInt16(stardustTowerShield)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

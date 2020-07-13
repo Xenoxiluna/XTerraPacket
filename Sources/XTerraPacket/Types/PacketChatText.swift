@@ -25,13 +25,13 @@ public struct PacketChatText: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.messageColorR = try reader.readUInt8()
         self.messageColorG = try reader.readUInt8()
         self.messageColorB = try reader.readUInt8()
-        self.message = try reader.read7BitEncodedString()
+        self.message = try reader.readVariableLengthString(.utf8)
     }
     
     mutating public func encodePayload() throws{
@@ -41,7 +41,7 @@ public struct PacketChatText: TerrariaPacket{
         try writer.writeUInt8(messageColorR)
         try writer.writeUInt8(messageColorG)
         try writer.writeUInt8(messageColorB)
-        try writer.write7BitEncodedString(message, encoding: .utf8)
-        payload.append(contentsOf: writer.data)
+        try writer.writeVariableLengthString(message, .utf8)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

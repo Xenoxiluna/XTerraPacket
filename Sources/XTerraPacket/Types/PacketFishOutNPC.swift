@@ -23,7 +23,7 @@ public struct PacketFishOutNPC: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.x = try reader.readUInt16()
         self.y = try reader.readUInt16()
@@ -35,6 +35,6 @@ public struct PacketFishOutNPC: TerrariaPacket{
         try writer.writeUInt16(x)
         try writer.writeUInt16(y)
         try writer.writeInt16(npcId)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

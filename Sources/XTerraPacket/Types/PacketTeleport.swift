@@ -24,7 +24,7 @@ public struct PacketTeleport: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.flags = try reader.readUInt8()
         self.targetId = try reader.readInt16()
@@ -38,6 +38,6 @@ public struct PacketTeleport: TerrariaPacket{
         try writer.writeInt16(targetId)
         try writer.writeFloat32(x)
         try writer.writeFloat32(y)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

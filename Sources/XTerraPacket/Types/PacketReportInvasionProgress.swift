@@ -24,7 +24,7 @@ public struct PacketReportInvasionProgress: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.progress = try reader.readInt32()
         self.maxProgress = try reader.readInt32()
@@ -38,6 +38,6 @@ public struct PacketReportInvasionProgress: TerrariaPacket{
         try writer.writeInt32(maxProgress)
         try writer.writeInt8(icon)
         try writer.writeInt8(wave)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

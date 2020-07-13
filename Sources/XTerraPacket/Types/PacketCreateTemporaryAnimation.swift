@@ -24,7 +24,7 @@ public struct PacketCreateTemporaryAnimation: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.animationType = try reader.readInt16()
         self.tileType = try reader.readUInt16()
@@ -38,6 +38,6 @@ public struct PacketCreateTemporaryAnimation: TerrariaPacket{
         try writer.writeUInt16(tileType)
         try writer.writeInt16(x)
         try writer.writeInt16(y)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

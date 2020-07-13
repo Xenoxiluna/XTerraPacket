@@ -26,16 +26,16 @@ public struct PacketConnectRequest: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         let strlen = Int(try reader.readUInt8())
-        self.version = try reader.readString(strlen)
+        self.version = try reader.readUTF8String(strlen)
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt8(UInt8(version.count))
-        try writer.writeString(version, encoding: .utf8)
-        payload.append(contentsOf: writer.data)
+        try writer.writeString(version, .utf8)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

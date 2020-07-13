@@ -24,7 +24,7 @@ public struct PacketSyncExtraValue: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.npcIndex = try reader.readInt16()
         self.extraValue = try reader.readFloat32()
@@ -38,6 +38,6 @@ public struct PacketSyncExtraValue: TerrariaPacket{
         try writer.writeFloat32(extraValue)
         try writer.writeFloat32(x)
         try writer.writeFloat32(y)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

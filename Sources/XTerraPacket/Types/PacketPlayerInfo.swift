@@ -56,12 +56,12 @@ public struct PacketPlayerInfo: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.skinVariant = try reader.readUInt8()
         self.hair = try reader.readUInt8()
-        self.name = try reader.readNullTerminatedStringNoTrail()
+        self.name = try reader.readVariableLengthString(.utf8)
         self.hairDye = try reader.readUInt8()
         self.hideVisuals = try reader.readUInt8()
         self.hideVisuals2 = try reader.readUInt8()
@@ -81,7 +81,7 @@ public struct PacketPlayerInfo: TerrariaPacket{
         try writer.writeUInt8(playerId)
         try writer.writeUInt8(skinVariant)
         try writer.writeUInt8(hair)
-        try writer.write7BitEncodedString(name, encoding: .utf8)
+        try writer.writeVariableLengthString(name, .utf8)
         try writer.writeUInt8(hairDye)
         try writer.writeUInt8(hideVisuals)
         try writer.writeUInt8(hideVisuals2)
@@ -94,6 +94,6 @@ public struct PacketPlayerInfo: TerrariaPacket{
         try writer.write(pantsColor)
         try writer.write(shoeColor)
         try writer.writeUInt8(difficulty)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

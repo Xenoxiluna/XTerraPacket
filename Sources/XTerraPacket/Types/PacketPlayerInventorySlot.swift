@@ -34,7 +34,7 @@ public struct PacketPlayerInventorySlot: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.slotId = try reader.readUInt8()
@@ -50,6 +50,6 @@ public struct PacketPlayerInventorySlot: TerrariaPacket{
         try writer.writeInt16(stack)
         try writer.writeUInt8(prefix)
         try writer.writeInt16(itemNetId)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

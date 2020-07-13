@@ -25,13 +25,13 @@ public struct PacketPlayerKillMe: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.hitDirection = try reader.readUInt8()
         self.damage = try reader.readInt16()
         self.pvp = try reader.readBool()
-        self.deathText = try reader.read7BitEncodedString()
+        self.deathText = try reader.readVariableLengthString(.utf8)
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
@@ -40,7 +40,7 @@ public struct PacketPlayerKillMe: TerrariaPacket{
         try writer.writeUInt8(hitDirection)
         try writer.writeInt16(damage)
         try writer.writeBool(pvp)
-        try writer.write7BitEncodedString(deathText, encoding: .utf8)
-        payload.append(contentsOf: writer.data)
+        try writer.writeVariableLengthString(deathText, .utf8)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

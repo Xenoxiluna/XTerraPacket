@@ -9,9 +9,25 @@
 import Foundation
 import SwiftyBytes
 
+/// This is an enum for decoding packets somewhat dynamically
 public enum TerrariaPacketFactory{
+    
+    /**
+    Call this function for retriving a TerrariaPacket from an array of UInt8's
+    - Parameters:
+     - packet : The packet bytes to decode from.
+    
+    ### Usage Example: ###
+    ````
+    let packetData: [UInt8] = [25, 0, 13, 2, 72, 20, 0, 0, 0, 255, 16, 129, 69, 0, 240, 237, 69, 23, 143, 26, 65, 0, 0, 0, 0]
+    guard var packet = try? TerrariaPacketFactory.decodePacket(packet: packetData) else {
+        print("Parse failed!")
+        print("Failed bytes: \(packetData))")
+    }
+    ````
+    */
     public static func decodePacket(packet: [UInt8]) throws -> TerrariaPacket?{
-        let packetData = BinaryReadableData(data: Data(packet))
+        let packetData = BinaryData(data: Data(packet))
         let packetReader = BinaryReader(packetData)
         let length = try packetReader.readUInt16()
         if let ptype = TerrariaPacketType(rawValue: try packetReader.readUInt8()){

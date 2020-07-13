@@ -24,7 +24,7 @@ public struct PacketDoorUse: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.action = try reader.readUInt8()
         self.tileX = try reader.readInt16()
@@ -38,6 +38,6 @@ public struct PacketDoorUse: TerrariaPacket{
         try writer.writeInt16(tileX)
         try writer.writeInt16(tileY)
         try writer.writeUInt8(direction)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

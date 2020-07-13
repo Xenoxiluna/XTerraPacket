@@ -32,7 +32,7 @@ public struct PacketProjectileNew: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.projectileId = try reader.readInt16()
         self.positionX = try reader.readFloat32()
@@ -80,6 +80,6 @@ public struct PacketProjectileNew: TerrariaPacket{
         if aiFlags.bits[3] == 1{
             try writer.writeInt16(projectileUUID)
         }
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

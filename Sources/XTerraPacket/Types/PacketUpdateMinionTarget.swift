@@ -23,7 +23,7 @@ public struct PacketUpdateMinionTarget: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.targetX = try reader.readFloat32()
@@ -35,6 +35,6 @@ public struct PacketUpdateMinionTarget: TerrariaPacket{
         try writer.writeUInt8(playerId)
         try writer.writeFloat32(targetX)
         try writer.writeFloat32(targetY)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

@@ -25,12 +25,12 @@ public struct PacketSignNew: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.signId = try reader.readInt16()
         self.x = try reader.readInt16()
         self.y = try reader.readInt16()
-        self.text = try reader.read7BitEncodedString()
+        self.text = try reader.readVariableLengthString(.utf8)
         self.playerId = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
@@ -39,8 +39,8 @@ public struct PacketSignNew: TerrariaPacket{
         try writer.writeInt16(signId)
         try writer.writeInt16(x)
         try writer.writeInt16(y)
-        try writer.write7BitEncodedString(text, encoding: .utf8)
+        try writer.writeVariableLengthString(text, .utf8)
         try writer.writeUInt8(playerId)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

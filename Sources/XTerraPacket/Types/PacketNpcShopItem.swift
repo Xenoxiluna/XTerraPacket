@@ -26,7 +26,7 @@ public struct PacketNpcShopItem: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.slot = try reader.readUInt8()
         self.itemType = try reader.readInt16()
@@ -44,6 +44,6 @@ public struct PacketNpcShopItem: TerrariaPacket{
         try writer.writeUInt8(prefix)
         try writer.writeInt32(value)
         try writer.writeUInt8(flags)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

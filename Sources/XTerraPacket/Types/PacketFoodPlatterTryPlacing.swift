@@ -25,7 +25,7 @@ public struct PacketFoodPlatterTryPlacing: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.x = try reader.readInt16()
         self.y = try reader.readInt16()
@@ -41,6 +41,6 @@ public struct PacketFoodPlatterTryPlacing: TerrariaPacket{
         try writer.writeInt16(netId)
         try writer.writeUInt8(prefix)
         try writer.writeInt16(stack)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

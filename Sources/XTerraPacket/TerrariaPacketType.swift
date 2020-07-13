@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// This is an enum containing all of the Terraria packet types.
 public enum TerrariaPacketType: UInt8 {
     case Other = 255
     case ConnectRequest = 1

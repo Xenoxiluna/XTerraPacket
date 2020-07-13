@@ -25,7 +25,7 @@ public struct PacketChestOpen: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.chestId = try reader.readInt16()
         self.chestX = try reader.readInt16()
@@ -33,7 +33,7 @@ public struct PacketChestOpen: TerrariaPacket{
         self.nameLength = try reader.readUInt8()
 
         if (self.nameLength >= 0 && self.nameLength <= 20){
-            self.chestName = try reader.read7BitEncodedString()
+            self.chestName = try reader.readVariableLengthString(.utf8)
         }
     }
     mutating public func encodePayload() throws{
@@ -46,8 +46,8 @@ public struct PacketChestOpen: TerrariaPacket{
         self.nameLength = UInt8(chestName.count)
         
         if (self.nameLength >= 0 && self.nameLength <= 20){
-            try writer.write7BitEncodedString(chestName, encoding: .utf8)
+            try writer.writeVariableLengthString(chestName, .utf8)
         }
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

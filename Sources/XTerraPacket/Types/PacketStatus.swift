@@ -22,16 +22,16 @@ public struct PacketStatus: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.statusMax = try reader.readInt32()
-        self.text = try reader.read7BitEncodedString()
+        self.text = try reader.readVariableLengthString(.utf8)
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeInt32(statusMax)
-        try writer.write7BitEncodedString(text, encoding: .utf8)
-        payload.append(contentsOf: writer.data)
+        try writer.writeVariableLengthString(text, .utf8)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

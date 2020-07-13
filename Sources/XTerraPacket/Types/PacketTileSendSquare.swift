@@ -26,7 +26,7 @@ public struct PacketTileSendSquare: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt16()
 
@@ -41,7 +41,7 @@ public struct PacketTileSendSquare: TerrariaPacket{
         self.tileX = try reader.readInt16()
         self.tileY = try reader.readInt16()
 
-        self.tilePayload = try reader.read(reader.data.data.count - reader.readIndex)
+        self.tilePayload = try reader.read(reader.data.bytes.count - reader.readIndex)
     }
     mutating public func encodePayload() throws{
         print("Not Implemented")

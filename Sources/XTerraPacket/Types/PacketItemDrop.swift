@@ -29,7 +29,7 @@ public struct PacketItemDrop: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.itemId = try reader.readInt16()
         self.positionX = try reader.readFloat32()
@@ -53,6 +53,6 @@ public struct PacketItemDrop: TerrariaPacket{
         try writer.writeUInt8(prefix)
         try writer.writeUInt8(noDelay)
         try writer.writeInt16(itemNetId)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

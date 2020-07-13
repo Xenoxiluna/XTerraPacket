@@ -21,7 +21,7 @@ public struct PacketRemoveRevengeMarker: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.id = try reader.readInt32()
     }
@@ -29,6 +29,6 @@ public struct PacketRemoveRevengeMarker: TerrariaPacket{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeInt32(id)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

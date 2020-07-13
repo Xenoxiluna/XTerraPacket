@@ -23,7 +23,7 @@ public struct PacketPlayerAnimation: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.itemRotation = try reader.readFloat32()
@@ -35,6 +35,6 @@ public struct PacketPlayerAnimation: TerrariaPacket{
         try writer.writeUInt8(playerId)
         try writer.writeFloat32(itemRotation)
         try writer.writeInt16(itemAnimation)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

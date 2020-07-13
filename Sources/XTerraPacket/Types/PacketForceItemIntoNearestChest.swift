@@ -21,7 +21,7 @@ public struct PacketForceItemIntoNearestChest: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.inventorySlot = try reader.readUInt8()
     }
@@ -29,6 +29,6 @@ public struct PacketForceItemIntoNearestChest: TerrariaPacket{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt8(inventorySlot)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

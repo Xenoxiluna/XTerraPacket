@@ -29,7 +29,7 @@ public struct PacketSyncRevengeMarker: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.uniqueId = try reader.readInt32()
         self.pos = [try reader.readFloat32(), try reader.readFloat32()]
@@ -54,6 +54,6 @@ public struct PacketSyncRevengeMarker: TerrariaPacket{
         try writer.writeInt32(coinValue)
         try writer.writeFloat32(baseValue)
         try writer.writeBool(spawnedFromStatue)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

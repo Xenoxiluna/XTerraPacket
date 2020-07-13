@@ -30,7 +30,7 @@ public struct PacketPlayerHp: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.life = try reader.readUInt16()
@@ -42,6 +42,6 @@ public struct PacketPlayerHp: TerrariaPacket{
         try writer.writeUInt8(playerId)
         try writer.writeUInt16(life)
         try writer.writeUInt16(maxLife)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

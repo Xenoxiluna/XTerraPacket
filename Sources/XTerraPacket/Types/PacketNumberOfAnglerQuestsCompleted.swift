@@ -22,7 +22,7 @@ public struct PacketNumberOfAnglerQuestsCompleted: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.anglerQuestsCompleted = try reader.readInt32()
@@ -32,6 +32,6 @@ public struct PacketNumberOfAnglerQuestsCompleted: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeUInt8(playerId)
         try writer.writeInt32(anglerQuestsCompleted)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

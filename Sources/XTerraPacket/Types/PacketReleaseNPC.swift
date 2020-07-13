@@ -24,7 +24,7 @@ public struct PacketReleaseNPC: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.x = try reader.readInt32()
         self.y = try reader.readInt32()
@@ -38,6 +38,6 @@ public struct PacketReleaseNPC: TerrariaPacket{
         try writer.writeInt32(y)
         try writer.writeInt16(npcType)
         try writer.writeUInt8(style)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

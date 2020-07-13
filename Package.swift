@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "XTerraPacket", targets: ["XTerraPacket"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Xenoxiluna/SwiftyBytes.git", .upToNextMinor(from:"0.2.0")),
+        .package(url: "https://github.com/Xenoxiluna/SwiftyBytes.git", .upToNextMinor(from:"0.4.0")),
     ],
     targets: [
         .target(name: "XTerraPacket", dependencies: ["SwiftyBytes"]),

@@ -22,7 +22,7 @@ public struct PacketProjectileDestroy: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.projectileId = try reader.readInt16()
         self.owner = try reader.readUInt8()
@@ -32,6 +32,6 @@ public struct PacketProjectileDestroy: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeInt16(projectileId)
         try writer.writeUInt8(owner)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

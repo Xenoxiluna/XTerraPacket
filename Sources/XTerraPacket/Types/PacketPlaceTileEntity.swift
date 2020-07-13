@@ -23,7 +23,7 @@ public struct PacketPlaceTileEntity: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.x = try reader.readInt16()
         self.y = try reader.readInt16()
@@ -35,6 +35,6 @@ public struct PacketPlaceTileEntity: TerrariaPacket{
         try writer.writeInt16(x)
         try writer.writeInt16(y)
         try writer.writeUInt8(type)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

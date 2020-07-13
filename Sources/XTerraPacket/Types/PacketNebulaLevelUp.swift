@@ -24,7 +24,7 @@ public struct PacketNebulaLevelUp: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.levelUpType = try reader.readUInt8()
@@ -37,6 +37,6 @@ public struct PacketNebulaLevelUp: TerrariaPacket{
         try writer.writeUInt8(levelUpType)
         try writer.writeFloat32(originX)
         try writer.writeFloat32(originY)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

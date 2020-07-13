@@ -22,7 +22,7 @@ public struct PacketSetCountsAsHostForGameplay: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.id = try reader.readUInt8()
         self.value = try reader.readBool()
@@ -32,6 +32,6 @@ public struct PacketSetCountsAsHostForGameplay: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeUInt8(id)
         try writer.writeBool(value)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

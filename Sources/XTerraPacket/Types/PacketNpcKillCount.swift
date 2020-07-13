@@ -22,7 +22,7 @@ public struct PacketNpcKillCount: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.npcType = try reader.readInt16()
         self.killCount = try reader.readInt32()
@@ -32,6 +32,6 @@ public struct PacketNpcKillCount: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeInt16(npcType)
         try writer.writeInt32(killCount)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

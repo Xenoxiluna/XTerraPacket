@@ -26,7 +26,7 @@ public struct PacketTeleportationPotion: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.potionType = try reader.readUInt8()
     }
@@ -34,6 +34,6 @@ public struct PacketTeleportationPotion: TerrariaPacket{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt8(potionType)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

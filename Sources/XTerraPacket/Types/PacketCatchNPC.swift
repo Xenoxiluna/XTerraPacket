@@ -22,7 +22,7 @@ public struct PacketCatchNPC: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.npcId = try reader.readUInt16()
         self.who = try reader.readUInt8()
@@ -33,6 +33,6 @@ public struct PacketCatchNPC: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeUInt16(npcId)
         try writer.writeUInt8(who)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

@@ -34,7 +34,7 @@ public struct PacketPlayerHurtV2: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         
         self.playerId = try reader.readUInt8()
@@ -62,7 +62,7 @@ public struct PacketPlayerHurtV2: TerrariaPacket{
             self.fromItemPrefix = try reader.readUInt8()
         }
         if (self.playerDeathReason.bits[7] != 0){
-            self.fromCustomReason = try reader.read7BitEncodedString()
+            self.fromCustomReason = try reader.readVariableLengthString(.utf8)
         }
         
         self.damage = try reader.readInt16()
@@ -98,13 +98,13 @@ public struct PacketPlayerHurtV2: TerrariaPacket{
             try writer.writeUInt8(fromItemPrefix)
         }
         if (self.playerDeathReason.bits[7] != 0){
-            try writer.write7BitEncodedString(fromCustomReason, encoding: .utf8)
+            try writer.writeVariableLengthString(fromCustomReason, .utf8)
         }
         
         try writer.writeInt16(damage)
         try writer.writeUInt8(hitDirection)
         try writer.writeUInt8(flags)
         try writer.writeInt8(cooldownCounter)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

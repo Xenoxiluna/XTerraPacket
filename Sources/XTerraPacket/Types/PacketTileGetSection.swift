@@ -28,7 +28,7 @@ public struct PacketTileGetSection: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.x = try reader.readUInt32()
         self.y = try reader.readUInt32()
@@ -38,6 +38,6 @@ public struct PacketTileGetSection: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeUInt32(x)
         try writer.writeUInt32(y)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

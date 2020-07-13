@@ -23,7 +23,7 @@ public struct PacketUpdateGoodEvil: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.good = try reader.readUInt8()
         self.evil = try reader.readUInt8()
@@ -35,6 +35,6 @@ public struct PacketUpdateGoodEvil: TerrariaPacket{
         try writer.writeUInt8(good)
         try writer.writeUInt8(evil)
         try writer.writeUInt8(crimson)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

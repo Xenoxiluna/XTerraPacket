@@ -22,7 +22,7 @@ public struct PacketItemOwner: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.itemId = try reader.readInt16()
         self.playerId = try reader.readUInt8()
@@ -32,6 +32,6 @@ public struct PacketItemOwner: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeInt16(itemId)
         try writer.writeUInt8(playerId)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

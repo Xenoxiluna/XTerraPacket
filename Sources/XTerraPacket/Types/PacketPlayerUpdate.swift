@@ -28,7 +28,7 @@ public struct PacketPlayerUpdate: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.control = try reader.readUInt8()
@@ -57,6 +57,6 @@ public struct PacketPlayerUpdate: TerrariaPacket{
             try writer.writeFloat32(velocityX)
             try writer.writeFloat32(velocityY)
         }
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

@@ -26,14 +26,14 @@ public struct PacketCreateCombatTextExtended: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.positionX = try reader.readFloat32()
         self.positionY = try reader.readFloat32()
         self.colorR = try reader.readUInt8()
         self.colorG = try reader.readUInt8()
         self.colorB = try reader.readUInt8()
-        self.combatText = try reader.read7BitEncodedString()
+        self.combatText = try reader.readVariableLengthString(.utf8)
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
@@ -43,7 +43,7 @@ public struct PacketCreateCombatTextExtended: TerrariaPacket{
         try writer.writeUInt8(colorR)
         try writer.writeUInt8(colorG)
         try writer.writeUInt8(colorB)
-        try writer.write7BitEncodedString(combatText, encoding: .utf8)
-        payload.append(contentsOf: writer.data)
+        try writer.writeVariableLengthString(combatText, .utf8)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

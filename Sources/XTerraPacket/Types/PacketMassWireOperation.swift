@@ -25,7 +25,7 @@ public struct PacketMassWireOperation: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.startX = try reader.readInt16()
         self.startY = try reader.readInt16()
@@ -41,6 +41,6 @@ public struct PacketMassWireOperation: TerrariaPacket{
         try writer.writeInt16(endX)
         try writer.writeInt16(endY)
         try writer.writeUInt8(toolMode)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

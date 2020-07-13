@@ -22,7 +22,7 @@ public struct PacketTravellingMerchantInventory: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         for _ in 0..<PacketTravellingMerchantInventory.MAX_ITEMS{
             items += [try reader.readInt16()]
@@ -36,6 +36,6 @@ public struct PacketTravellingMerchantInventory: TerrariaPacket{
             try writer.writeInt16(i)
         }
         
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

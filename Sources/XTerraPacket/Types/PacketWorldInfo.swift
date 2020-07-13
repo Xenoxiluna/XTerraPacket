@@ -78,7 +78,7 @@ public struct PacketWorldInfo: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.time = try reader.readUInt32()
         self.dayMoonInfo = try reader.readUInt8()
@@ -90,7 +90,7 @@ public struct PacketWorldInfo: TerrariaPacket{
         self.worldSurface = try reader.readUInt16()
         self.rockLayer = try reader.readUInt16()
         self.worldId = try reader.readUInt32()
-        self.worldName = try reader.readNullTerminatedStringNoTrail()
+        self.worldName = try reader.readVariableLengthString(.utf8)
         self.worldNameOffset = try reader.readUInt32()
         self.moonType = try reader.readUInt8()
         self.treeBackground = try reader.readUInt8()
@@ -143,7 +143,7 @@ public struct PacketWorldInfo: TerrariaPacket{
         try writer.writeUInt16(worldSurface)
         try writer.writeUInt16(rockLayer)
         try writer.writeUInt32(worldId)
-        try writer.writeString(worldName, encoding: .utf8)
+        try writer.writeString(worldName, .utf8)
         try writer.writeUInt32(worldNameOffset)
         try writer.writeUInt8(moonType)
         try writer.writeUInt8(treeBackground)
@@ -182,6 +182,6 @@ public struct PacketWorldInfo: TerrariaPacket{
         try writer.writeUInt8(invasionType)
         try writer.writeUInt64(lobby)
         try writer.writeUInt8(sandstormSeverity)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

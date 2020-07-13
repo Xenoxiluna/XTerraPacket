@@ -27,7 +27,7 @@ public struct PacketWiredCannonShot: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.damage = try reader.readUInt16()
         self.knockback = try reader.readFloat32()
@@ -47,6 +47,6 @@ public struct PacketWiredCannonShot: TerrariaPacket{
         try writer.writeUInt16(angle)
         try writer.writeUInt16(ammo)
         try writer.writeUInt8(playerId)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

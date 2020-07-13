@@ -24,12 +24,12 @@ public struct PacketChestName: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.chestId = try reader.readInt16()
         self.chestX = try reader.readInt16()
         self.chestY = try reader.readInt16()
-        self.name = try reader.read7BitEncodedString()
+        self.name = try reader.readVariableLengthString(.utf8)
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
@@ -37,7 +37,7 @@ public struct PacketChestName: TerrariaPacket{
         try writer.writeInt16(chestId)
         try writer.writeInt16(chestX)
         try writer.writeInt16(chestY)
-        try writer.write7BitEncodedString(name, encoding: .utf8)
-        payload.append(contentsOf: writer.data)
+        try writer.writeVariableLengthString(name, .utf8)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

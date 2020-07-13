@@ -26,7 +26,7 @@ public struct PacketCreateCombatText: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.x = try reader.readFloat32()
         self.y = try reader.readFloat32()
@@ -45,6 +45,6 @@ public struct PacketCreateCombatText: TerrariaPacket{
         try writer.writeUInt8(colorG)
         try writer.writeUInt8(colorB)
         try writer.writeInt32(healAmount)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

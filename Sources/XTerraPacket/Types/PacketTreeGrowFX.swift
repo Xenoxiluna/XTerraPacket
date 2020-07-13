@@ -25,7 +25,7 @@ public struct PacketTreeGrowFX: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.growEffect = try reader.readBool()
         self.x = try reader.readInt16()
@@ -41,6 +41,6 @@ public struct PacketTreeGrowFX: TerrariaPacket{
         try writer.writeInt16(y)
         try writer.writeUInt8(height)
         try writer.writeInt16(treeGore)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

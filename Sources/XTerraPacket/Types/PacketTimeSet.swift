@@ -24,7 +24,7 @@ public struct PacketTimeSet: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.dayTime = try reader.readBool()
         self.timeValue = try reader.readInt32()
@@ -38,6 +38,6 @@ public struct PacketTimeSet: TerrariaPacket{
         try writer.writeInt32(timeValue)
         try writer.writeInt16(sunModY)
         try writer.writeInt16(moonModY)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

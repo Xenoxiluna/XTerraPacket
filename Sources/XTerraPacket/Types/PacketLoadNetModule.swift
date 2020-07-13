@@ -51,23 +51,23 @@ public struct PacketLoadNetModule: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.netModuleId = try reader.readUInt16()
         
-        if let c = CommandType.init(rawValue: try reader.read7BitEncodedString()){
+        if let c = CommandType.init(rawValue: try reader.readVariableLengthString(.utf8)){
             self.command = c
         }
         
-        self.message = try reader.read7BitEncodedString()
+        self.message = try reader.readVariableLengthString(.utf8)
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt16(netModuleId)
-        try writer.write7BitEncodedString(command.rawValue, encoding: .utf8)
-        try writer.write7BitEncodedString(message, encoding: .utf8)
-        payload.append(contentsOf: writer.data)
+        try writer.writeVariableLengthString(command.rawValue, .utf8)
+        try writer.writeVariableLengthString(message, .utf8)
+        payload.append(contentsOf: writer.data.bytes)
     }
     
     public enum CommandType: String{

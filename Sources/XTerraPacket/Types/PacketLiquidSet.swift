@@ -24,7 +24,7 @@ public struct PacketLiquidSet: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.x = try reader.readInt16()
         self.y = try reader.readInt16()
@@ -38,6 +38,6 @@ public struct PacketLiquidSet: TerrariaPacket{
         try writer.writeInt16(y)
         try writer.writeUInt8(liquid)
         try writer.writeUInt8(liquidType)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

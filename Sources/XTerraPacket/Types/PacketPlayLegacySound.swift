@@ -27,7 +27,7 @@ public struct PacketPlayLegacySound: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.positionX = try reader.readFloat32()
         self.positionY = try reader.readFloat32()
@@ -61,6 +61,6 @@ public struct PacketPlayLegacySound: TerrariaPacket{
         if soundFlags.bits[2] == 1{
             try writer.writeFloat32(pitchOffset)
         }
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

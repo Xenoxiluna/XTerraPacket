@@ -23,7 +23,7 @@ public struct PacketChestUnlock: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.chestType = try reader.readUInt8()
         self.x = try reader.readInt16()
@@ -35,6 +35,6 @@ public struct PacketChestUnlock: TerrariaPacket{
         try writer.writeUInt8(chestType)
         try writer.writeInt16(x)
         try writer.writeInt16(y)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

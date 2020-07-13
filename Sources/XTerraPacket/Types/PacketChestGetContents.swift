@@ -22,7 +22,7 @@ public struct PacketChestGetContents: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.tileX = try reader.readInt16()
         self.tileY = try reader.readInt16()
@@ -32,6 +32,6 @@ public struct PacketChestGetContents: TerrariaPacket{
         let writer = BinaryWriter()
         try writer.writeInt16(tileX)
         try writer.writeInt16(tileY)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

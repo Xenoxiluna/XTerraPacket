@@ -21,7 +21,7 @@ public struct PacketCrystalInvasionSendWaitTime: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.timeUntilNextWave = try reader.readInt32()
     }
@@ -29,6 +29,6 @@ public struct PacketCrystalInvasionSendWaitTime: TerrariaPacket{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeInt32(timeUntilNextWave)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

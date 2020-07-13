@@ -31,7 +31,7 @@ public struct PacketNpcUpdateBuff: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.npcId = try reader.readInt16()
         self.buffId1 = try reader.readUInt8()
@@ -59,6 +59,6 @@ public struct PacketNpcUpdateBuff: TerrariaPacket{
         try writer.writeInt16(time4)
         try writer.writeUInt8(buffId5)
         try writer.writeInt16(time5)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

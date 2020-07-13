@@ -26,7 +26,7 @@ public struct PacketTileEntityDisplayDollItemSync: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.tileEntityId = try reader.readInt32()
@@ -44,6 +44,6 @@ public struct PacketTileEntityDisplayDollItemSync: TerrariaPacket{
         try writer.writeUInt16(itemId)
         try writer.writeUInt16(stack)
         try writer.writeUInt8(prefix)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

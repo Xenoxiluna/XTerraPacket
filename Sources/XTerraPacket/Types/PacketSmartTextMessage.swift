@@ -25,13 +25,13 @@ public struct PacketSmartTextMessage: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.messageColorR = try reader.readUInt8()
         self.messageColorG = try reader.readUInt8()
         self.messageColorB = try reader.readUInt8()
         self.messageLength = try reader.readInt16()
-        self.message = try reader.read7BitEncodedString()
+        self.message = try reader.readVariableLengthString(.utf8)
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
@@ -39,8 +39,8 @@ public struct PacketSmartTextMessage: TerrariaPacket{
         try writer.writeUInt8(messageColorR)
         try writer.writeUInt8(messageColorG)
         try writer.writeUInt8(messageColorB)
-        try writer.write7BitEncodedString(message, encoding: .utf8)
+        try writer.writeVariableLengthString(message, .utf8)
         try writer.writeInt16(messageLength)
-        payload.append(contentsOf: writer.data)
+        payload.append(contentsOf: writer.data.bytes)
     }
 }

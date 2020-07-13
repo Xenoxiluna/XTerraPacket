@@ -21,7 +21,7 @@ public struct PacketTileSendSection: TerrariaPacket{
         if self.payload.isEmpty{
             try decodeHeader()
         }
-        let data = BinaryReadableData(data: self.payload)
+        let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.tiles = try reader.read(payload.count) // Find a way to read tile data
     }
@@ -30,7 +30,7 @@ public struct PacketTileSendSection: TerrariaPacket{
         /*self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeInt32(healAmount)
-        try writer.write7BitEncodedString(text, encoding: .utf8)
-        payload.append(contentsOf: writer.data)*/
+        try writer.writeVariableLengthString(text, .utf8)
+        payload.append(contentsOf: writer.data.bytes)*/
     }
 }
