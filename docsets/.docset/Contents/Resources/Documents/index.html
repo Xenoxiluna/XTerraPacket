@@ -476,13 +476,19 @@
         <section>
           <section class="section">
             
-            <h1 id='work-in-progress' class='heading'>WORK IN PROGRESS</h1>
-<h1 id='code-xterrapacket-code' class='heading'><code>XTerraPacket</code></h1>
+            <h1 id='code-xterrapacket-code' class='heading'><code>XTerraPacket</code></h1>
 
-<p>Terraria Packet Library</p>
+<p><a href="https://developer.apple.com/swift/"><img src="https://img.shields.io/badge/Swift-5.X-blue.svg" alt="Swift 5.X"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license"></a>
+<a href="https://xenoxiluna.github.io/XTerraPacket/index.html"><img src="http://img.shields.io/badge/read_the-docs-2196f3.svg" alt="Docs"></a></p>
+
+<p>A Packet Library for encoding and decoding Terraria&rsquo;s network protocol packets.</p>
 
 <p>## Usage
  Brief example using SwiftNIO for now&hellip; You can also look at <a href="https://github.com/Xenoxiluna/TerraProxy-CLI">TerraProxy-CLI</a> for inspiration/uses.</p>
+
+<p>### Decode
+ You can decode an incoming packet&rsquo;s raw bytes like this:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">packetData</span> <span class="o">=</span> <span class="n">bb</span><span class="o">.</span><span class="nf">getBytes</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="n">bb</span><span class="o">.</span><span class="n">readableBytes</span><span class="p">)</span><span class="o">!</span>
 <span class="k">guard</span> <span class="k">var</span> <span class="nv">packet</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">TerrariaPacketFactory</span><span class="o">.</span><span class="nf">decodePacket</span><span class="p">(</span><span class="nv">packet</span><span class="p">:</span> <span class="n">packetData</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"Parse failed!"</span><span class="p">)</span>
@@ -490,11 +496,15 @@
     <span class="n">channel</span><span class="o">.</span><span class="nf">writeAndFlush</span><span class="p">(</span><span class="kt">NIOAny</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="n">bb</span><span class="p">),</span> <span class="nv">promise</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
     <span class="k">return</span>
 <span class="p">}</span>
+</code></pre>
 
-<span class="nf">print</span><span class="p">(</span><span class="s">"Swift Packet type: </span><span class="se">\(</span><span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">packet</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<p>Once you have a valid packet, you can view its type using the swifts dynamic type(of:) function or using the provided getType() protocol extension.</p>
+<pre class="highlight swift"><code><span class="nf">print</span><span class="p">(</span><span class="s">"Swift Packet type: </span><span class="se">\(</span><span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">packet</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="s">"Packet Type: </span><span class="se">\(</span><span class="n">packet</span><span class="o">.</span><span class="nf">getType</span><span class="p">()</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+</code></pre>
 
-<span class="k">do</span><span class="p">{</span>
+<p>Form there, its possible to run the decode again to translate the payload. You could also just use the packets decodePayload() function.</p>
+<pre class="highlight swift"><code><span class="k">do</span><span class="p">{</span>
     <span class="k">try</span> <span class="n">packet</span><span class="o">.</span><span class="nf">decode</span><span class="p">()</span>
     <span class="nf">print</span><span class="p">(</span><span class="s">"Decoded Packet Bytes: </span><span class="se">\(</span><span class="n">packet</span><span class="o">.</span><span class="n">bytes</span><span class="se">)</span><span class="s">)"</span><span class="p">)</span>
 <span class="p">}</span><span class="k">catch</span><span class="p">{</span>
@@ -511,6 +521,10 @@
     <span class="nf">print</span><span class="p">(</span><span class="s">""</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
+
+<p>### Encode
+ TODO
+ For now, See API Documentation for encode functionality.</p>
 
 <p>## Dependencies</p>
 
