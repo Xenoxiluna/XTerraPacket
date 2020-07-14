@@ -8,11 +8,7 @@
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   0        UInt16   Message Length
-///   1-x String Message
-/// ----------------------------------
+/// Connection Request Packet
 public struct PacketConnectRequest: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

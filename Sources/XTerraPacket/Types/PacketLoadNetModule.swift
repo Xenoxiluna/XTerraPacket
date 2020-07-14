@@ -8,13 +8,7 @@
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1        UInt8    playerId
-///   2-3     UInt16  life
-///   4-5     UInt16  maxLife
-///
-/// ----------------------------------
+/// TODO: Add additional 1.4 creative stuff
 /*Packet type: LoadNetModule
 NetModule Packet Bytes: [14, 0, 82, 1, 0, 3, 83, 97, 121, 4, 116, 101, 115, 116]
 
@@ -76,5 +70,8 @@ public struct PacketLoadNetModule: TerrariaPacket{
         case Roll = "\u{4}Roll"
         case Party = "\u{5}Party"
         case Playing = "\u{7}Playing"
+        case Help = "\u{4}Help"
+        case RPS = "\u{3}RPS"
+        case Emoji = "\u{5}Emoji"
     }
 }
