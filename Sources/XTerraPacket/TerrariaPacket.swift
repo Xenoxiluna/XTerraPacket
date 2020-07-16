@@ -89,6 +89,7 @@ extension TerrariaPacket{
         try encodePayload()
         calculateLength()
         try encodeHeader()
+        bytes.append(contentsOf: payload)
     }
     
     /**

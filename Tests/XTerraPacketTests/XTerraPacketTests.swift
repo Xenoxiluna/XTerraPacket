@@ -39,19 +39,7 @@ final class XTerraPacketTests: XCTestCase {
             try newpacket.decodePayload()
         }catch {}
         XCTAssertEqual(packet.getType(), TerrariaPacketType.PasswordSend)
-        XCTAssertEqual(newpacket.password, "\u{5}lolpl")
-    }
-    
-    func testLoadNetModule(){
-        let pbytes: [UInt8] = [12, 0, 82, 6, 0, 14, 0, 0, 0, 0, 0, 63]
-        guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
-        var newpacket = packet as! PacketLoadNetModule
-        do{
-            try newpacket.decode()
-        }catch {}
-        XCTAssertEqual(packet.getType(), TerrariaPacketType.LoadNetModule)
-        XCTAssertEqual(newpacket.command, PacketLoadNetModule.CommandType.Say)
-        XCTAssertEqual(newpacket.netModuleId, 6)
+        XCTAssertEqual(newpacket.password.trimmingCharacters(in: .controlCharacters), "lolpl")
     }
     
     func testPlayerUpdate(){
@@ -65,10 +53,60 @@ final class XTerraPacketTests: XCTestCase {
         XCTAssertEqual(newpacket.positionY, 4.6667764e-10)
     }
     
+    func testSayLoadNetModule(){
+        let pbytes: [UInt8] = [24, 0, 82, 1, 0, 3, 83, 97, 121, 14, 116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116]
+        guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
+        var newpacket = packet as! PacketLoadNetModule
+        do{
+            try newpacket.decode()
+        }catch {}
+        XCTAssertEqual(packet.getType(), TerrariaPacketType.LoadNetModule)
+        XCTAssertEqual(newpacket.netModuleType, PacketLoadNetModule.NetModuleType.Chat)
+        
+        let chat = newpacket.netModule as! NetModuleChat
+        XCTAssertEqual(chat.command, NetModuleChat.ChatCommandType.Say)
+        XCTAssertEqual(chat.message.trimmingCharacters(in: .controlCharacters), "this is a test")
+        XCTAssertEqual(chat.message.trimmingCharacters(in: .controlCharacters).data(using: .utf8)!.bytes, [116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116])
+    }
+    
+    func testCreateSayLoadNetModule(){
+        var load = PacketLoadNetModule()
+        load.netModuleType = .Chat
+        load.netModule = NetModuleChat(command: .Say, message: "this is a test")
+        do{
+            try load.encode()
+        }catch {}
+        XCTAssertEqual(load.getType(), TerrariaPacketType.LoadNetModule)
+        XCTAssertEqual(load.netModuleType, PacketLoadNetModule.NetModuleType.Chat)
+        XCTAssertEqual(load.bytes, [25, 0, 82, 1, 0, 4, 3, 83, 97, 121, 14, 116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116])
+        
+        let chat = load.netModule as! NetModuleChat
+        XCTAssertEqual(chat.command, NetModuleChat.ChatCommandType.Say)
+        XCTAssertEqual(chat.message, "this is a test")
+    }
+    func testCreativeLoadNetModule(){
+        let pbytes: [UInt8] = [12, 0, 82, 6, 0, 14, 0, 0, 126, 70, 9, 63]
+        guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
+        var newpacket = packet as! PacketLoadNetModule
+        do{
+            try newpacket.decode()
+        }catch {}
+        XCTAssertEqual(packet.getType(), TerrariaPacketType.LoadNetModule)
+        XCTAssertEqual(newpacket.netModuleType, PacketLoadNetModule.NetModuleType.CreativePowers)
+    }
+    
     static var allTests = [
         ("testConnectRequest", testConnectRequest),
         ("testPlayerInfo", testPlayerInfo),
         ("testPasswordSend", testPasswordSend),
-        ("testLoadNetModule", testLoadNetModule),
+        ("testSayLoadNetModule", testSayLoadNetModule),
+        ("testCreativeLoadNetModule", testCreativeLoadNetModule),
+        ("testCreateSayLoadNetModule", testCreateSayLoadNetModule),
     ]
+}
+
+extension Data {
+    var bytes : [UInt8]{
+        return [UInt8](self)
+    }
 }

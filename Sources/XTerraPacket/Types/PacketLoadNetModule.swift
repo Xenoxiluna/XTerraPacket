@@ -9,35 +9,13 @@ import Foundation
 import SwiftyBytes
 
 /// TODO: Add additional 1.4 creative stuff
-/*Packet type: LoadNetModule
-NetModule Packet Bytes: [14, 0, 82, 1, 0, 3, 83, 97, 121, 4, 116, 101, 115, 116]
-
-Header
-14, 0, 82,
-
-Payload
-1, 0, 3, 83, 97, 121, 4, 116, 101, 115, 116
-
-
-Load Net Module:
-1, 0
-
-Command: Say
-3, 83, 97, 121
-
-TextLength
-4,
-
-Text
-116, 101, 115, 116*/
 public struct PacketLoadNetModule: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .LoadNetModule
     public var payload: [UInt8] = []
-    public var netModuleId: UInt16 = 1
-    public var command: CommandType = .Say
-    public var message: String = ""
+    public var netModuleType: NetModuleType = .Liquid
+    public lazy var netModule: NetModule = NetModuleChat()
     
     public init(){}
     
@@ -47,31 +25,78 @@ public struct PacketLoadNetModule: TerrariaPacket{
         }
         let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
-        self.netModuleId = try reader.readUInt16()
-        
-        if let c = CommandType.init(rawValue: try reader.readVariableLengthString(.utf8)){
-            self.command = c
+        if let m = NetModuleType.init(rawValue: try reader.readUInt16()){
+            self.netModuleType = m
         }
         
-        self.message = try reader.readVariableLengthString(.utf8)
+        switch self.netModuleType{
+        case .Ambience:
+            break
+        case .Bestiary:
+            break
+        case .Chat:
+            self.netModule = NetModuleChat()
+            try self.netModule.decode(reader)
+        case .CreativePowerPermissions:
+            break
+        case .CreativePowers:
+            break
+        case .CreativeUnlocks:
+            break
+        case .CreativeUnlocksReport:
+            break
+        case .Liquid:
+            break
+        case .Particles:
+            break
+        case .Ping:
+            break
+        case .TeleportPylon:
+            break
+        }
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
-        try writer.writeUInt16(netModuleId)
-        try writer.writeVariableLengthString(command.rawValue, .utf8)
-        try writer.writeVariableLengthString(message, .utf8)
+        try writer.writeUInt16(netModuleType.rawValue)
+        switch self.netModuleType{
+        case .Ambience:
+            break
+        case .Bestiary:
+            break
+        case .Chat:
+            try self.netModule.encode(writer)
+        case .CreativePowerPermissions:
+            break
+        case .CreativePowers:
+            break
+        case .CreativeUnlocks:
+            break
+        case .CreativeUnlocksReport:
+            break
+        case .Liquid:
+            break
+        case .Particles:
+            break
+        case .Ping:
+            break
+        case .TeleportPylon:
+            break
+        }
         payload.append(contentsOf: writer.data.bytes)
     }
     
-    public enum CommandType: String{
-        case Say = "\u{3}Say"
-        case Emote = "\u{5}Emote"
-        case Roll = "\u{4}Roll"
-        case Party = "\u{5}Party"
-        case Playing = "\u{7}Playing"
-        case Help = "\u{4}Help"
-        case RPS = "\u{3}RPS"
-        case Emoji = "\u{5}Emoji"
+    public enum NetModuleType: UInt16{
+        case Liquid = 0
+        case Chat = 1
+        case Ping = 2
+        case Ambience = 3
+        case Bestiary = 4
+        case CreativeUnlocks = 5
+        case CreativePowers = 6
+        case CreativeUnlocksReport = 7
+        case TeleportPylon = 8
+        case Particles = 9
+        case CreativePowerPermissions = 10
     }
 }
