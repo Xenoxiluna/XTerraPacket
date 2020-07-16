@@ -8,32 +8,26 @@
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1        UInt8    playerId
-///   2        UInt8    slot
-///   3-4     UInt16  stack
-///   5        UInt8    prefix
-///   6-7     UInt16  itemId
-///
-/// ----------------------------------
 public struct PacketWorldInfo: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .WorldInfo
     public var payload: [UInt8] = []
+    
     public var time: UInt32 = 0
     public var dayMoonInfo: UInt8 = 0
     public var moonPhase: UInt8 = 0
-    public var maxTilesX: UInt32 = 0
-    public var maxTilesY: UInt32 = 0
+    public var maxTilesX: UInt16 = 0
+    public var maxTilesY: UInt16 = 0
     public var spawnX: UInt16 = 0
     public var spawnY: UInt16 = 0
     public var worldSurface: UInt16 = 0
     public var rockLayer: UInt16 = 0
     public var worldId: UInt32 = 0
     public var worldName: String = ""
-    public var worldNameOffset: UInt32 = 0
+    public var gameMode: UInt8 = 0
+    public var worldUniqueId: [UInt8] = []
+    public var worldGenVersion: [UInt32] = [0,0]
     public var moonType: UInt8 = 0
     public var treeBackground: UInt8 = 0
     public var corruptionBackground: UInt8 = 0
@@ -83,15 +77,17 @@ public struct PacketWorldInfo: TerrariaPacket{
         self.time = try reader.readUInt32()
         self.dayMoonInfo = try reader.readUInt8()
         self.moonPhase = try reader.readUInt8()
-        self.maxTilesX = try reader.readUInt32()
-        self.maxTilesY = try reader.readUInt32()
+        self.maxTilesX = try reader.readUInt16()
+        self.maxTilesY = try reader.readUInt16()
         self.spawnX = try reader.readUInt16()
         self.spawnY = try reader.readUInt16()
         self.worldSurface = try reader.readUInt16()
         self.rockLayer = try reader.readUInt16()
         self.worldId = try reader.readUInt32()
-        self.worldName = try reader.readVariableLengthString(.utf8)
-        self.worldNameOffset = try reader.readUInt32()
+        self.worldName = try reader.readVariableLengthString(.utf8).trimmingCharacters(in: .controlCharacters)
+        self.gameMode = try reader.readUInt8()
+        self.worldUniqueId = try reader.read(16)
+        self.worldGenVersion = [try reader.readUInt32(),try reader.readUInt32()]
         self.moonType = try reader.readUInt8()
         self.treeBackground = try reader.readUInt8()
         self.corruptionBackground = try reader.readUInt8()
@@ -136,15 +132,18 @@ public struct PacketWorldInfo: TerrariaPacket{
         try writer.writeUInt32(time)
         try writer.writeUInt8(dayMoonInfo)
         try writer.writeUInt8(moonPhase)
-        try writer.writeUInt32(maxTilesX)
-        try writer.writeUInt32(maxTilesY)
+        try writer.writeUInt16(maxTilesX)
+        try writer.writeUInt16(maxTilesY)
         try writer.writeUInt16(spawnX)
         try writer.writeUInt16(spawnY)
         try writer.writeUInt16(worldSurface)
         try writer.writeUInt16(rockLayer)
         try writer.writeUInt32(worldId)
-        try writer.writeString(worldName, .utf8)
-        try writer.writeUInt32(worldNameOffset)
+        try writer.writeVariableLengthString(worldName, .utf8)
+        try writer.writeUInt8(gameMode)
+        try writer.write(worldUniqueId)
+        try writer.writeUInt32(worldGenVersion[0])
+        try writer.writeUInt32(worldGenVersion[1])
         try writer.writeUInt8(moonType)
         try writer.writeUInt8(treeBackground)
         try writer.writeUInt8(corruptionBackground)

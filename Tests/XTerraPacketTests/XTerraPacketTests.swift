@@ -94,6 +94,18 @@ final class XTerraPacketTests: XCTestCase {
         XCTAssertEqual(packet.getType(), TerrariaPacketType.LoadNetModule)
         XCTAssertEqual(newpacket.netModuleType, PacketLoadNetModule.NetModuleType.CreativePowers)
     }
+        
+    func testWorldInfo1405(){
+            let pbytes: [UInt8] = [174, 0, 7, 120, 105, 0, 0, 1, 0, 208, 32, 96, 9, 131, 16, 251, 4, 233, 2, 241, 3, 1, 0, 0, 0, 18, 68, 97, 114, 107, 32, 71, 97, 109, 105, 110, 103, 32, 45, 32, 76, 105, 116, 101, 0, 162, 115, 81, 63, 236, 123, 78, 162, 148, 66, 147, 134, 228, 29, 125, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 7, 0, 6, 0, 9, 0, 8, 0, 107, 0, 108, 0, 111, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
+            var newpacket = packet as! PacketWorldInfo
+            do{
+                try newpacket.decode()
+            }catch {}
+            XCTAssertEqual(packet.getType(), TerrariaPacketType.WorldInfo)
+            XCTAssertEqual(newpacket.worldName, "Dark Gaming - Lite")
+            XCTAssertEqual(newpacket.cloudNumber, 0)
+        }
     
     static var allTests = [
         ("testConnectRequest", testConnectRequest),
@@ -102,6 +114,7 @@ final class XTerraPacketTests: XCTestCase {
         ("testSayLoadNetModule", testSayLoadNetModule),
         ("testCreativeLoadNetModule", testCreativeLoadNetModule),
         ("testCreateSayLoadNetModule", testCreateSayLoadNetModule),
+        ("testWorldInfo1405", testWorldInfo1405),
     ]
 }
 
