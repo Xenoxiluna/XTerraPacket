@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyBytes
 
-/// TODO: Add additional 1.4 creative stuff
+/// This is a struct for LoadNetModule packets.
 public struct PacketLoadNetModule: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -31,58 +31,45 @@ public struct PacketLoadNetModule: TerrariaPacket{
         
         switch self.netModuleType{
         case .Ambience:
-            break
+            self.netModule = NetModuleAmbience()
+            try self.netModule.decode(reader)
         case .Bestiary:
-            break
+            self.netModule = NetModuleBestiary()
+            try self.netModule.decode(reader)
         case .Chat:
             self.netModule = NetModuleChat()
             try self.netModule.decode(reader)
         case .CreativePowerPermissions:
-            break
+            self.netModule = NetModuleCreativePowerPermissions()
+            try self.netModule.decode(reader)
         case .CreativePowers:
-            break
+            self.netModule = NetModuleCreativePowers()
+            try self.netModule.decode(reader)
         case .CreativeUnlocks:
-            break
+            self.netModule = NetModuleCreativeUnlocks()
+            try self.netModule.decode(reader)
         case .CreativeUnlocksReport:
-            break
+            self.netModule = NetModuleCreativeUnlocksPlayerReport()
+            try self.netModule.decode(reader)
         case .Liquid:
-            break
+            self.netModule = NetModuleLiquid()
+            try self.netModule.decode(reader)
         case .Particles:
-            break
+            self.netModule = NetModuleParticles()
+            try self.netModule.decode(reader)
         case .Ping:
-            break
+            self.netModule = NetModulePing()
+            try self.netModule.decode(reader)
         case .TeleportPylon:
-            break
+            self.netModule = NetModuleTeleportPylon()
+            try self.netModule.decode(reader)
         }
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt16(netModuleType.rawValue)
-        switch self.netModuleType{
-        case .Ambience:
-            break
-        case .Bestiary:
-            break
-        case .Chat:
-            try self.netModule.encode(writer)
-        case .CreativePowerPermissions:
-            break
-        case .CreativePowers:
-            break
-        case .CreativeUnlocks:
-            break
-        case .CreativeUnlocksReport:
-            break
-        case .Liquid:
-            break
-        case .Particles:
-            break
-        case .Ping:
-            break
-        case .TeleportPylon:
-            break
-        }
+        try self.netModule.encode(writer)
         payload.append(contentsOf: writer.data.bytes)
     }
     

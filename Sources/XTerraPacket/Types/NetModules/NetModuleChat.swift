@@ -8,11 +8,29 @@
 import Foundation
 import SwiftyBytes
 
+/// This is a struct for the ChatCommand NetModule.
 public struct NetModuleChat: NetModule{
     public var command: ChatCommandType = .Emote
     public var message: String = ""
     
     public init(){}
+    
+    /**
+    Call this function to initialize the NetModule with data.
+     - Parameters:
+        - command : The vanilla chat command you wish to perform as a NetModuleChat.ChatCommandType
+        - message : The Chat Message String to send.
+     
+    ### Usage Example: ###
+    ````
+    var load = PacketLoadNetModule()
+    load.netModuleType = .Chat
+    load.netModule = NetModuleChat(command: .Say, message: "this is a test")
+    do{
+        try load.encode()
+    }catch {}
+    ````
+    */
     public init(command: ChatCommandType, message: String){
         self.command = command
         self.message = message
@@ -29,7 +47,7 @@ public struct NetModuleChat: NetModule{
         case .Emoji:
             return
         case .Emote:
-             return
+            return
         case .Help:
             return
         case .Party:
