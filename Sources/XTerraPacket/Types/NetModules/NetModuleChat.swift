@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  NetModuleChat.swift
 //  
 //
 //  Created by Quentin Berry on 7/15/20.
@@ -19,7 +19,7 @@ public struct NetModuleChat: NetModule{
     }
     
     public mutating func decode(_ reader: BinaryReader) throws{
-        if let c = ChatCommandType.init(rawValue: try reader.readVariableLengthString(.utf8)){
+        if let c = ChatCommandType.init(rawValue: try reader.readVariableLengthString(.utf8).trimmingCharacters(in: .controlCharacters)){
             self.command = c
         }
         switch self.command{
@@ -66,13 +66,13 @@ public struct NetModuleChat: NetModule{
     }
     
     public enum ChatCommandType: String{
-        case Say = "\u{3}Say"
-        case Emote = "\u{5}Emote"
-        case Roll = "\u{4}Roll"
-        case Party = "\u{5}Party"
-        case Playing = "\u{7}Playing"
-        case Help = "\u{4}Help"
-        case RPS = "\u{3}RPS"
-        case Emoji = "\u{5}Emoji"
+        case Say = "Say"
+        case Emote = "Emote"
+        case Roll = "Roll"
+        case Party = "Party"
+        case Playing = "Playing"
+        case Help = "Help"
+        case RPS = "RPS"
+        case Emoji = "Emoji"
     }
 }

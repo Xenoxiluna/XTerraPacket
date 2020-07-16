@@ -78,7 +78,7 @@ final class XTerraPacketTests: XCTestCase {
         }catch {}
         XCTAssertEqual(load.getType(), TerrariaPacketType.LoadNetModule)
         XCTAssertEqual(load.netModuleType, PacketLoadNetModule.NetModuleType.Chat)
-        XCTAssertEqual(load.bytes, [25, 0, 82, 1, 0, 4, 3, 83, 97, 121, 14, 116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116])
+        XCTAssertEqual(load.bytes, [24, 0, 82, 1, 0, 3, 83, 97, 121, 14, 116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116])
         
         let chat = load.netModule as! NetModuleChat
         XCTAssertEqual(chat.command, NetModuleChat.ChatCommandType.Say)
