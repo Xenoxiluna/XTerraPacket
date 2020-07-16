@@ -1030,6 +1030,314 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleAmbience.swift",
+      "line": 13,
+      "symbol": "NetModuleAmbience.playerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleAmbience.swift",
+      "line": 14,
+      "symbol": "NetModuleAmbience.number",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleAmbience.swift",
+      "line": 15,
+      "symbol": "NetModuleAmbience.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleAmbience.swift",
+      "line": 19,
+      "symbol": "NetModuleAmbience.init(playerId:number:type:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleBestiary.swift",
+      "line": 13,
+      "symbol": "NetModuleBestiary.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleBestiary.swift",
+      "line": 26,
+      "symbol": "NetModuleBestiary.BestiaryType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleBestiary.swift",
+      "line": 27,
+      "symbol": "NetModuleBestiary.BestiaryType.KillCount",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleBestiary.swift",
+      "line": 28,
+      "symbol": "NetModuleBestiary.BestiaryType.Sight",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleBestiary.swift",
+      "line": 29,
+      "symbol": "NetModuleBestiary.BestiaryType.Chat",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 13,
+      "symbol": "NetModuleChat.command",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 14,
+      "symbol": "NetModuleChat.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 86,
+      "symbol": "NetModuleChat.ChatCommandType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 87,
+      "symbol": "NetModuleChat.ChatCommandType.Say",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 88,
+      "symbol": "NetModuleChat.ChatCommandType.Emote",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 89,
+      "symbol": "NetModuleChat.ChatCommandType.Roll",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 90,
+      "symbol": "NetModuleChat.ChatCommandType.Party",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 91,
+      "symbol": "NetModuleChat.ChatCommandType.Playing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 92,
+      "symbol": "NetModuleChat.ChatCommandType.Help",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 93,
+      "symbol": "NetModuleChat.ChatCommandType.RPS",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleChat.swift",
+      "line": 94,
+      "symbol": "NetModuleChat.ChatCommandType.Emoji",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativePowerPermissions.swift",
+      "line": 13,
+      "symbol": "NetModuleCreativePowerPermissions.zero",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativePowerPermissions.swift",
+      "line": 14,
+      "symbol": "NetModuleCreativePowerPermissions.powerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativePowerPermissions.swift",
+      "line": 15,
+      "symbol": "NetModuleCreativePowerPermissions.level",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativePowerPermissions.swift",
+      "line": 19,
+      "symbol": "NetModuleCreativePowerPermissions.init(zero:powerId:level:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativePowers.swift",
+      "line": 13,
+      "symbol": "NetModuleCreativePowers.powerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativePowers.swift",
+      "line": 17,
+      "symbol": "NetModuleCreativePowers.init(powerId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativeUnlocks.swift",
+      "line": 13,
+      "symbol": "NetModuleCreativeUnlocks.itemId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativeUnlocks.swift",
+      "line": 14,
+      "symbol": "NetModuleCreativeUnlocks.sacrificeCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativeUnlocks.swift",
+      "line": 18,
+      "symbol": "NetModuleCreativeUnlocks.init(itemId:sacrificeCount:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativeUnlocksPlayerReport.swift",
+      "line": 13,
+      "symbol": "NetModuleCreativeUnlocksPlayerReport.zero",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativeUnlocksPlayerReport.swift",
+      "line": 14,
+      "symbol": "NetModuleCreativeUnlocksPlayerReport.itemId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativeUnlocksPlayerReport.swift",
+      "line": 15,
+      "symbol": "NetModuleCreativeUnlocksPlayerReport.amount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleCreativeUnlocksPlayerReport.swift",
+      "line": 19,
+      "symbol": "NetModuleCreativeUnlocksPlayerReport.init(zero:itemId:amount:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleParticles.swift",
+      "line": 13,
+      "symbol": "NetModuleParticles.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleParticles.swift",
+      "line": 14,
+      "symbol": "NetModuleParticles.position",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleParticles.swift",
+      "line": 15,
+      "symbol": "NetModuleParticles.velocity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleParticles.swift",
+      "line": 16,
+      "symbol": "NetModuleParticles.shaderIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleParticles.swift",
+      "line": 17,
+      "symbol": "NetModuleParticles.playerId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleParticles.swift",
+      "line": 21,
+      "symbol": "NetModuleParticles.init(type:position:velocity:shaderIndex:playerId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModulePing.swift",
+      "line": 13,
+      "symbol": "NetModulePing.position",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleTeleportPylon.swift",
+      "line": 13,
+      "symbol": "NetModuleTeleportPylon.action",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleTeleportPylon.swift",
+      "line": 14,
+      "symbol": "NetModuleTeleportPylon.x",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleTeleportPylon.swift",
+      "line": 15,
+      "symbol": "NetModuleTeleportPylon.y",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/NetModules/NetModuleTeleportPylon.swift",
+      "line": 16,
+      "symbol": "NetModuleTeleportPylon.pylonType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketAnglerQuest.swift",
       "line": 13,
       "symbol": "PacketAnglerQuest.bytes",
@@ -1738,42 +2046,42 @@
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketConnectRequest.swift",
-      "line": 17,
+      "line": 13,
       "symbol": "PacketConnectRequest.bytes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketConnectRequest.swift",
-      "line": 18,
+      "line": 14,
       "symbol": "PacketConnectRequest.length",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketConnectRequest.swift",
-      "line": 19,
+      "line": 15,
       "symbol": "PacketConnectRequest.packetType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketConnectRequest.swift",
-      "line": 20,
+      "line": 16,
       "symbol": "PacketConnectRequest.payload",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketConnectRequest.swift",
-      "line": 21,
+      "line": 17,
       "symbol": "PacketConnectRequest.version",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketConnectRequest.swift",
-      "line": 23,
+      "line": 19,
       "symbol": "PacketConnectRequest.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -3334,106 +3642,134 @@
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 39,
-      "symbol": "PacketLoadNetModule",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 40,
+      "line": 13,
       "symbol": "PacketLoadNetModule.bytes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 41,
+      "line": 14,
       "symbol": "PacketLoadNetModule.length",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 42,
+      "line": 15,
       "symbol": "PacketLoadNetModule.packetType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 43,
+      "line": 16,
       "symbol": "PacketLoadNetModule.payload",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 44,
-      "symbol": "PacketLoadNetModule.netModuleId",
+      "line": 17,
+      "symbol": "PacketLoadNetModule.netModuleType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 45,
-      "symbol": "PacketLoadNetModule.command",
+      "line": 18,
+      "symbol": "PacketLoadNetModule.netModule",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 46,
-      "symbol": "PacketLoadNetModule.message",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 48,
+      "line": 20,
       "symbol": "PacketLoadNetModule.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 73,
-      "symbol": "PacketLoadNetModule.CommandType",
+      "line": 76,
+      "symbol": "PacketLoadNetModule.NetModuleType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 74,
-      "symbol": "PacketLoadNetModule.CommandType.Say",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 75,
-      "symbol": "PacketLoadNetModule.CommandType.Emote",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
-      "line": 76,
-      "symbol": "PacketLoadNetModule.CommandType.Roll",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
       "line": 77,
-      "symbol": "PacketLoadNetModule.CommandType.Party",
+      "symbol": "PacketLoadNetModule.NetModuleType.Liquid",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
       "line": 78,
-      "symbol": "PacketLoadNetModule.CommandType.Playing",
+      "symbol": "PacketLoadNetModule.NetModuleType.Chat",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 79,
+      "symbol": "PacketLoadNetModule.NetModuleType.Ping",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 80,
+      "symbol": "PacketLoadNetModule.NetModuleType.Ambience",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 81,
+      "symbol": "PacketLoadNetModule.NetModuleType.Bestiary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 82,
+      "symbol": "PacketLoadNetModule.NetModuleType.CreativeUnlocks",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 83,
+      "symbol": "PacketLoadNetModule.NetModuleType.CreativePowers",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 84,
+      "symbol": "PacketLoadNetModule.NetModuleType.CreativeUnlocksReport",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 85,
+      "symbol": "PacketLoadNetModule.NetModuleType.TeleportPylon",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 86,
+      "symbol": "PacketLoadNetModule.NetModuleType.Particles",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Xenoxiluna1/Documents/GitHub/XTerraPacket/Sources/XTerraPacket/Types/PacketLoadNetModule.swift",
+      "line": 87,
+      "symbol": "PacketLoadNetModule.NetModuleType.CreativePowerPermissions",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
