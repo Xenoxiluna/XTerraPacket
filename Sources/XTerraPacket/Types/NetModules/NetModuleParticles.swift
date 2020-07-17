@@ -11,8 +11,8 @@ import SwiftyBytes
 /// This is a struct for the Particles NetModule.
 public struct NetModuleParticles: NetModule{
     public var type: UInt8 = 0
-    public var position: SIMD2<Float32> = []
-    public var velocity: SIMD2<Float32> = []
+    public var position: SIMD2<Float32> = [0,0]
+    public var velocity: SIMD2<Float32> = [0,0]
     public var shaderIndex: Int32 = 0
     public var playerId: UInt8 = 0
 
