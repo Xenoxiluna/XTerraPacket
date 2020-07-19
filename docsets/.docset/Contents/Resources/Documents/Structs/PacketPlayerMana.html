@@ -14,7 +14,7 @@
     <a title="PacketPlayerMana Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (18% documented)</p>
+        <p><a href="../index.html"> Docs</a> (25% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -161,6 +161,9 @@
                 <a href="../Structs/PacketDoorUse.html">PacketDoorUse</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/PacketDoorUse/DoorAction.html">– DoorAction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/PacketEffectHeal.html">PacketEffectHeal</a>
               </li>
               <li class="nav-group-task">
@@ -281,6 +284,9 @@
                 <a href="../Structs/PacketPlaceChest.html">PacketPlaceChest</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/PacketPlaceChest/ChestAction.html">– ChestAction</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/PacketPlaceItemFrame.html">PacketPlaceItemFrame</a>
               </li>
               <li class="nav-group-task">
@@ -342,6 +348,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PacketPlayerSpawn.html">PacketPlayerSpawn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketPlayerSpawn/SpawnReason.html">– SpawnReason</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PacketPlayerSpawnSelf.html">PacketPlayerSpawnSelf</a>
@@ -525,13 +534,7 @@
 
                 </div>
               </div>
-            <p>Payload Structure
-Offset  |  Type  |  Description
-  1        UInt8    playerId
-  2-3     UInt16  life
-  4-5     UInt16  maxLife</p>
-
-<hr>
+            <p>Player current mana and max mana</p>
 
           </section>
           <section class="section task-group-section">
@@ -675,9 +678,9 @@ Offset  |  Type  |  Description
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12XTerraPacket0B10PlayerManaV4manas6UInt16Vvp"></a>
+                    <a name="/s:12XTerraPacket0B10PlayerManaV4manas5Int16Vvp"></a>
                     <a name="//apple_ref/swift/Property/mana" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12XTerraPacket0B10PlayerManaV4manas6UInt16Vvp">mana</a>
+                    <a class="token" href="#/s:12XTerraPacket0B10PlayerManaV4manas5Int16Vvp">mana</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -692,7 +695,7 @@ Offset  |  Type  |  Description
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">mana</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">mana</span><span class="p">:</span> <span class="kt">Int16</span></code></pre>
 
                         </div>
                       </div>
@@ -702,9 +705,9 @@ Offset  |  Type  |  Description
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12XTerraPacket0B10PlayerManaV03maxD0s6UInt16Vvp"></a>
+                    <a name="/s:12XTerraPacket0B10PlayerManaV03maxD0s5Int16Vvp"></a>
                     <a name="//apple_ref/swift/Property/maxMana" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12XTerraPacket0B10PlayerManaV03maxD0s6UInt16Vvp">maxMana</a>
+                    <a class="token" href="#/s:12XTerraPacket0B10PlayerManaV03maxD0s5Int16Vvp">maxMana</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -719,7 +722,7 @@ Offset  |  Type  |  Description
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxMana</span><span class="p">:</span> <span class="kt">UInt16</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">maxMana</span><span class="p">:</span> <span class="kt">Int16</span></code></pre>
 
                         </div>
                       </div>
@@ -810,7 +813,7 @@ Offset  |  Type  |  Description
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-07-16)</p>
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-07-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
