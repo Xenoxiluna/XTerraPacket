@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/22/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Finished connecting to the server
 public struct PacketFinishedConnectingToServer: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

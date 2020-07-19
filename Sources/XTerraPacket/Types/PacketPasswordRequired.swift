@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Password Required
 public struct PacketPasswordRequired: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

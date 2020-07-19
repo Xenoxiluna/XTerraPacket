@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
+/// Strike NPC with held item
 public struct PacketNpcItemStrike: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

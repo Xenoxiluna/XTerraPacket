@@ -8,13 +8,6 @@
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1        UInt8    playerId
-///   2-3     UInt16  spawnX
-///   4-5     UInt16  spawnY
-///
-/// ----------------------------------
 public struct PacketPlayerSpawn: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -23,6 +16,8 @@ public struct PacketPlayerSpawn: TerrariaPacket{
     public var playerId: UInt8 = 0
     public var spawnX: Int16 = 0
     public var spawnY: Int16 = 0
+    public var respawnTimeRemaining: Int32 = 0
+    public var reason: SpawnReason = .SpawningIntoWorld
     
     public init(){}
     
@@ -35,6 +30,10 @@ public struct PacketPlayerSpawn: TerrariaPacket{
         self.playerId = try reader.readUInt8()
         self.spawnX = try reader.readInt16()
         self.spawnY = try reader.readInt16()
+        self.respawnTimeRemaining = try reader.readInt32()
+        if let r = SpawnReason.init(rawValue: try reader.readUInt8()){
+            self.reason = r
+        }
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
@@ -42,6 +41,14 @@ public struct PacketPlayerSpawn: TerrariaPacket{
         try writer.writeUInt8(playerId)
         try writer.writeInt16(spawnX)
         try writer.writeInt16(spawnY)
+        try writer.writeInt32(respawnTimeRemaining)
+        try writer.writeUInt8(reason.rawValue)
         payload.append(contentsOf: writer.data.bytes)
+    }
+    
+    public enum SpawnReason: UInt8{
+        case ReviveFromDeath = 0
+        case SpawningIntoWorld = 1
+        case RecallFromItem = 2
     }
 }

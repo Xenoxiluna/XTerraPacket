@@ -3,31 +3,62 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Tweak item
 public struct PacketTweakItem: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .TweakItem
     public var payload: [UInt8] = []
     public var itemIndex: Int16 = 0
+    
+    /// Flags: 1 = Color; 2 = Damage; 4 = Knockback; 8 = UseAnimation; 16 = UseTime; 32 = Shoot; 64 = ShootSpeed; 128 = NextFlags
     public var flags1: UInt8 = 0
+    
+    /// If Flags1 Color on
     public var packedColorValue: UInt32 = 0
+    
+    // if Flags1 Damage on
     public var damage: UInt16 = 0
+    
+    /// if Flags1 Knockback on
     public var knockback: Float32 = 0
+    
+    /// if Flags1 UseAnimation on
     public var useAnimation: UInt16 = 0
+    
+    /// if Flags1 UseTime on
     public var useTime: UInt16 = 0
+    
+    /// if Flags1 Shoot on
     public var shoot: Int16 = 0
+    
+    /// if Flags1 ShootSpeed on
     public var shootSpeed: Float32 = 0
+    
+    /// if Flags1 NextFlags on;  Flags: 1 = Width; 2 = Height; 4 = Scale; 8 = Ammo; 16 = UseAmmo; 32 = NotAmmo
     public var flags2: UInt8 = 0
+    
+    /// if Flags2 Width on
     public var width: Int16 = 0
+    
+    /// if Flags2 Height on
     public var height: Int16 = 0
+    
+    /// if Flags2 Scale on
     public var scale: Float32 = 0
+    
+    /// If Flags2 Ammo on
     public var ammo: Int16 = 0
+    
+    /// If Flags2 UseAmmo on
     public var useAmmo: Int16 = 0
+    
+    /// If Flags2 NotAmmo on
     public var notAmmo: Bool = false
     
     public init(){}

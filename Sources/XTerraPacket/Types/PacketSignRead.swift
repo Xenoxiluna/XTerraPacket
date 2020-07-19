@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Read Sign
 public struct PacketSignRead: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

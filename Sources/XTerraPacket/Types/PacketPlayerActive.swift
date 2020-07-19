@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Is player active?
 public struct PacketPlayerActive: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

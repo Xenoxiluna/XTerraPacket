@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Place an object
 public struct PacketPlaceObject: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

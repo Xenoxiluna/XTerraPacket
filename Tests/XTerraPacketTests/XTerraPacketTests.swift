@@ -105,7 +105,18 @@ final class XTerraPacketTests: XCTestCase {
             XCTAssertEqual(packet.getType(), TerrariaPacketType.WorldInfo)
             XCTAssertEqual(newpacket.worldName, "Dark Gaming - Lite")
             XCTAssertEqual(newpacket.cloudNumber, 0)
-        }
+    }
+    
+    func testSpawn(){
+        let pbytes: [UInt8] = [13, 0, 12, 0, 255, 255, 255, 255, 0, 0, 0, 0, 1]
+        guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
+        var newpacket = packet as! PacketPlayerSpawn
+        do{
+            try newpacket.decode()
+        }catch {}
+        XCTAssertEqual(packet.getType(), TerrariaPacketType.PlayerSpawn)
+        XCTAssertEqual(newpacket.reason, PacketPlayerSpawn.SpawnReason.SpawningIntoWorld)
+    }
     
     static var allTests = [
         ("testConnectRequest", testConnectRequest),
@@ -115,6 +126,7 @@ final class XTerraPacketTests: XCTestCase {
         ("testCreativeLoadNetModule", testCreativeLoadNetModule),
         ("testCreateSayLoadNetModule", testCreateSayLoadNetModule),
         ("testWorldInfo1405", testWorldInfo1405),
+        ("testSpawn", testSpawn),
     ]
 }
 

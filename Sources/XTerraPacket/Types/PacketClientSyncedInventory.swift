@@ -3,7 +3,7 @@
 //
 //
 //  Created by Quentin Berry on 5/22/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes

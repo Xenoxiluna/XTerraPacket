@@ -3,26 +3,20 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1        UInt8    playerId
-///   2-3     UInt16  life
-///   4-5     UInt16  maxLife
-///
-/// ----------------------------------
+/// Player current mana and max mana
 public struct PacketPlayerMana: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .PlayerMana
     public var payload: [UInt8] = []
     public var playerId: UInt8 = 0
-    public var mana: UInt16 = 0
-    public var maxMana: UInt16 = 0
+    public var mana: Int16 = 0
+    public var maxMana: Int16 = 0
     
     public init(){}
     
@@ -33,15 +27,15 @@ public struct PacketPlayerMana: TerrariaPacket{
         let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
-        self.mana = try reader.readUInt16()
-        self.maxMana = try reader.readUInt16()
+        self.mana = try reader.readInt16()
+        self.maxMana = try reader.readInt16()
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt8(playerId)
-        try writer.writeUInt16(mana)
-        try writer.writeUInt16(maxMana)
+        try writer.writeInt16(mana)
+        try writer.writeInt16(maxMana)
         payload.append(contentsOf: writer.data.bytes)
     }
 }

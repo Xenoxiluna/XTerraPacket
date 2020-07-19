@@ -8,6 +8,7 @@
 import Foundation
 import SwiftyBytes
 
+/// Social Handshake
 public struct PacketSocialHandshake: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

@@ -3,17 +3,20 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
+/// Player dodge
 public struct PacketPlayerDodge: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .PlayerDodge
     public var payload: [UInt8] = []
     public var playerId: UInt8 = 0
+    
+    /// 1 = Ninja Dodge; 2 = Shadow Dodge
     public var flag: UInt8 = 0
     
     public init(){}

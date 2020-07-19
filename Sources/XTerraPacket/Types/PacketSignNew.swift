@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Client <-> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Update sign if changes from client. Display sign if sent from server
 public struct PacketSignNew: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -18,6 +19,7 @@ public struct PacketSignNew: TerrariaPacket{
     public var y: Int16 = 0
     public var text: String = ""
     public var playerId: UInt8 = 0
+    public var flags: UInt8 = 0
     
     public init(){}
     

@@ -3,25 +3,23 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Teleportation potion
 public struct PacketTeleportationPotion: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .TeleportationPotion
     public var payload: [UInt8] = []
+    
+    /// 0 = Teleportation Potion; 1 = Magic Conch; 2 = Demon Conch
     public var potionType: UInt8 = 0
     
     public init(){}
     
-    /*
-        case 0: TeleportationPotion()
-        case 1: MagicConch()
-        case 2: DemonConch()
-    */
     public mutating func decodePayload() throws{
         if self.payload.isEmpty{
             try decodeHeader()

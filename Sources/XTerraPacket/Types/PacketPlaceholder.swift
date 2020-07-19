@@ -8,6 +8,7 @@
 import Foundation
 import SwiftyBytes
 
+/// Placeholder packet for use by custom clients and servers
 public struct PacketPlaceholder: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

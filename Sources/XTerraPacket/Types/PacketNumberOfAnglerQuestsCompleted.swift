@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Number of Angler quests completed
 public struct PacketNumberOfAnglerQuestsCompleted: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -15,6 +16,7 @@ public struct PacketNumberOfAnglerQuestsCompleted: TerrariaPacket{
     public var payload: [UInt8] = []
     public var playerId: UInt8 = 0
     public var anglerQuestsCompleted: Int32 = 0
+    public var golfScore: Int32 = 0 // Added in 1.4
     
     public init(){}
     
@@ -26,12 +28,14 @@ public struct PacketNumberOfAnglerQuestsCompleted: TerrariaPacket{
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
         self.anglerQuestsCompleted = try reader.readInt32()
+        self.golfScore = try reader.readInt32()
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt8(playerId)
         try writer.writeInt32(anglerQuestsCompleted)
+        try writer.writeInt32(golfScore)
         payload.append(contentsOf: writer.data.bytes)
     }
 }

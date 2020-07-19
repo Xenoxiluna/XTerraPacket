@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Player hurt version 2
 public struct PacketPlayerHurtV2: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -25,6 +26,8 @@ public struct PacketPlayerHurtV2: TerrariaPacket{
     public var fromCustomReason: String = ""
     public var damage: Int16 = 0
     public var hitDirection: UInt8 = 0
+    
+    /// Flags: 1 = Crit; 2 = PvP
     public var flags: UInt8 = 0
     public var cooldownCounter: Int8 = 0
     

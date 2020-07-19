@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/22/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Fish out a NPC
 public struct PacketFishOutNPC: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

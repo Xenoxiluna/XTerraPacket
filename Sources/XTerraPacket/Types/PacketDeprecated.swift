@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  ??
 
 import Foundation
 import SwiftyBytes
 
+/// Deprecated
 public struct PacketDeprecated: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

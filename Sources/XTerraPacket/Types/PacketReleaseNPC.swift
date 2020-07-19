@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Release NPC
 public struct PacketReleaseNPC: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -16,6 +17,8 @@ public struct PacketReleaseNPC: TerrariaPacket{
     public var x: Int32 = 0
     public var y: Int32 = 0
     public var npcType: Int16 = 0
+    
+    /// Sent to NPC AI[2]
     public var style: UInt8 = 0
     
     public init(){}

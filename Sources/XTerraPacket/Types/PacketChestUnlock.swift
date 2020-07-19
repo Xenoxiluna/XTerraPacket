@@ -3,16 +3,19 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
+/// Chest Unlock(Used for doors as well)
 public struct PacketChestUnlock: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .ChestUnlock
     public var payload: [UInt8] = []
+    
+    ///: 1 = Chest Unlock; 2 = Door Unlock
     public var chestType: UInt8 = 0
     public var x: Int16 = 0
     public var y: Int16 = 0

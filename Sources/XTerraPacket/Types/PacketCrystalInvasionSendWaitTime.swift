@@ -3,16 +3,19 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Time until Crystal Invasion or Next Wave
 public struct PacketCrystalInvasionSendWaitTime: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .CrystalInvasionSendWaitTime
     public var payload: [UInt8] = []
+    
+    /// 30 seconds between waves, 5 seconds on first start
     public var timeUntilNextWave: Int32 = 0
     
     public init(){}

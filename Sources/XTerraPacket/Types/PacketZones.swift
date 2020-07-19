@@ -3,17 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/10/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1-4        UInt32    x
-///   5-8        UInt32    y
-///
-/// ----------------------------------
+/// Player zone
 public struct PacketZones: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

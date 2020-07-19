@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
+/// Modify a single tile (INCOMPLETE)
 public struct PacketTile: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -16,8 +17,6 @@ public struct PacketTile: TerrariaPacket{
     public var action: UInt8 = 0
     public var tileX: Int16 = 0
     public var tileY: Int16 = 0
-    public var var1: Int16 = 0
-    public var var2: UInt8 = 0
     
     public init(){}
     
@@ -30,8 +29,6 @@ public struct PacketTile: TerrariaPacket{
         self.action = try reader.readUInt8()
         self.tileX = try reader.readInt16()
         self.tileY = try reader.readInt16()
-        self.var1 = try reader.readInt16()
-        self.var2 = try reader.readUInt8()
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
@@ -39,8 +36,6 @@ public struct PacketTile: TerrariaPacket{
         try writer.writeUInt8(action)
         try writer.writeInt16(tileX)
         try writer.writeInt16(tileY)
-        try writer.writeInt16(var1)
-        try writer.writeUInt8(var2)
         payload.append(contentsOf: writer.data.bytes)
     }
 }

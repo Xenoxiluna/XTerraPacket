@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/22/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Tamper with NPC
 public struct PacketTamperWithNPC: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

@@ -3,18 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1        UInt8    playerId
-///   2-3     UInt16  life
-///   4-5     UInt16  maxLife
-///
-/// ----------------------------------
+/// Player health points and max HP
 public struct PacketPlayerHp: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

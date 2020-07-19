@@ -3,27 +3,19 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1        UInt8    playerId
-///   2        UInt8    slot
-///   3-4     UInt16  stack
-///   5        UInt8    prefix
-///   6-7     UInt16  itemId
-///
-/// ----------------------------------
+/// Player Inventory Slot
 public struct PacketPlayerInventorySlot: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
     public var packetType: TerrariaPacketType = .PlayerInventorySlot
     public var payload: [UInt8] = []
     public var playerId: UInt8 = 0
-    public var slotId: UInt8 = 0
+    public var slotId: Int16 = 0 // Updated from UInt8 for 1.4
     public var stack: Int16 = 0
     public var prefix: UInt8 = 0
     public var itemNetId: Int16 = 0
@@ -37,7 +29,7 @@ public struct PacketPlayerInventorySlot: TerrariaPacket{
         let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
         self.playerId = try reader.readUInt8()
-        self.slotId = try reader.readUInt8()
+        self.slotId = try reader.readInt16()
         self.stack = try reader.readInt16()
         self.prefix = try reader.readUInt8()
         self.itemNetId = try reader.readInt16()
@@ -46,7 +38,7 @@ public struct PacketPlayerInventorySlot: TerrariaPacket{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt8(playerId)
-        try writer.writeUInt8(slotId)
+        try writer.writeInt16(slotId)
         try writer.writeInt16(stack)
         try writer.writeUInt8(prefix)
         try writer.writeInt16(itemNetId)

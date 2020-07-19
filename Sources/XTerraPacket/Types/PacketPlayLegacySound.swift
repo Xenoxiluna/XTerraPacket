@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/22/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Play a legacy Sound
 public struct PacketPlayLegacySound: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -16,7 +17,9 @@ public struct PacketPlayLegacySound: TerrariaPacket{
     public var positionX: Float32 = 0
     public var positionY: Float32 = 0
     public var soundId: UInt16 = 0
-    public var soundFlags: UInt8 = 0 // BitFlags | 1 = Style, 2 = VolumeScale, 3 = PitchOffset
+    
+    /// BitFlags | 1 = Style, 2 = VolumeScale, 3 = PitchOffset
+    public var soundFlags: UInt8 = 0
     public var legacySoundStyle: Int32 = 0
     public var volumeScale: Float32 = 0
     public var pitchOffset: Float32 = 0

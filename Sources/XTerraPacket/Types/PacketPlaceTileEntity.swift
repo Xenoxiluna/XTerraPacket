@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Place a tile entity
 public struct PacketPlaceTileEntity: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -15,6 +16,8 @@ public struct PacketPlaceTileEntity: TerrariaPacket{
     public var payload: [UInt8] = []
     public var x: Int16 = 0
     public var y: Int16 = 0
+    
+    /// 2 = Logic Sensor; 1 = Item Frame; 0 = Training Dummy
     public var type: UInt8 = 0
     
     public init(){}

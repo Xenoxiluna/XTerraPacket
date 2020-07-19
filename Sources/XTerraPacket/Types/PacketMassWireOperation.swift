@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Perform a wire operation in mass
 public struct PacketMassWireOperation: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -17,6 +18,8 @@ public struct PacketMassWireOperation: TerrariaPacket{
     public var startY: Int16 = 0
     public var endX: Int16 = 0
     public var endY: Int16 = 0
+    
+    /// BitFlags: 1 = Red;  2 = Green; 4 = Blue; 8 = Yellow; 16 = Actuator; 32 = Cutter
     public var toolMode: UInt8 = 0
     
     public init(){}

@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/22/20.
-//
+//  Direction: Client -> Server
 
 import Foundation
 import SwiftyBytes
 
+/// Try placing into a weapon rack
 public struct PacketWeaponsRackTryPlacing: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

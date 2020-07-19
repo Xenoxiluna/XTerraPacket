@@ -3,11 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/10/20.
-//
+//  Direction: Server -> Client
 
 import Foundation
 import SwiftyBytes
 
+/// Wired cannon shot
 public struct PacketWiredCannonShot: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0

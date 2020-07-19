@@ -3,31 +3,12 @@
 //
 //
 //  Created by Quentin Berry on 5/7/20.
-//
+//  Direction: Server <-> Client (Sync)
 
 import Foundation
 import SwiftyBytes
 
-/// Payload Structure
-/// Offset  |  Type  |  Description
-///   1        UInt8    playerId
-///   2        UInt8    skinVariant
-///   3        UInt8    hair
-///   4-x     String   playernane
-///   5        UInt8    hairDye
-///   6        UInt8    hideVisuals
-///   7        UInt8    hideVisuals2
-///   8        UInt8    hideMisc
-///   9-11   UInt8    hairColor
-///   12-15 UInt8    playerId
-///   16-19 UInt8    playerId
-///   20-23 UInt8    playerId
-///   24-27 UInt8    playerId
-///   28-31 UInt8    playerId
-///   32-35 UInt8    playerId
-///   36      UInt8    playerId
-///
-/// ----------------------------------
+/// Player information
 public struct PacketPlayerInfo: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
@@ -35,6 +16,8 @@ public struct PacketPlayerInfo: TerrariaPacket{
     public var payload: [UInt8] = []
     public var playerId: UInt8 = 0
     public var skinVariant: UInt8 = 0
+    
+    /// Max 162
     public var hair: UInt8 = 0
     public var name: String = ""
     public var hairDye: UInt8 = 0
