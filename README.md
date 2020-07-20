@@ -5,6 +5,8 @@
 
 A Packet Library for encoding and decoding Terraria's network protocol packets.
 
+#### NOTE: Currently this supports only Terraria 1.4.X
+
  ## Usage
  Brief example using SwiftNIO for now... You can also look at [TerraProxy-CLI](https://github.com/Xenoxiluna/TerraProxy-CLI) for inspiration/uses.
  
