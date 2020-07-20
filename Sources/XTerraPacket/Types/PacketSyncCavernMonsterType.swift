@@ -24,8 +24,8 @@ public struct PacketSyncCavernMonsterType: TerrariaPacket{
         }
         let data = BinaryData(data: self.payload)
         let reader = BinaryReader(data)
-        for k in 0..<2 {
-            for l in 0..<3 {
+        for k in 0...2 {
+            for l in 0...3 {
                 self.cavernMonsterType[k][l] = try reader.readUInt16()
             }
         }
