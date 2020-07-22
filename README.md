@@ -50,7 +50,7 @@ default:
  
  ### Encode
  TODO
- For now, See API Documentation for encode functionality.
+ For now, See [API Documentation](https://xenoxiluna.github.io/XTerraPacket/index.html) for encode functionality.
  
  ## Dependencies
 
