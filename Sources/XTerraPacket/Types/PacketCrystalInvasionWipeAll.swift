@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketCrystalInvasionWipeAll: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .CrystalInvasionWipeAll
     public var payload: [UInt8] = []
     

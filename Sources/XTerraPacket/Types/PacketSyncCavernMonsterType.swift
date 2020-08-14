@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketSyncCavernMonsterType: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .SyncCavernMonsterType
     public var payload: [UInt8] = []
     public var cavernMonsterType: [[UInt16]] = [[UInt16]](repeating: [UInt16](repeating: 0, count: 3), count: 2)

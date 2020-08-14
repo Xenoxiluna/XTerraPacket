@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketStatus: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .Status
     public var payload: [UInt8] = []
     public var id: Int32 = 0

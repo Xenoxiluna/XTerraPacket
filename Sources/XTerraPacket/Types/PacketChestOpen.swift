@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketChestOpen: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ClientToServer
     public var packetType: TerrariaPacketType = .ChestOpen
     public var payload: [UInt8] = []
     public var chestId: Int16 = 0

@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketForceItemIntoNearestChest: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ClientToServer
     public var packetType: TerrariaPacketType = .ForceItemIntoNearestChest
     public var payload: [UInt8] = []
     public var inventorySlot: UInt8 = 0

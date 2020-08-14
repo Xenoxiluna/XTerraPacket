@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketRequestTileEntityInteraction: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .RequestTileEntityInteraction
     public var payload: [UInt8] = []
     public var tileId: Int32 = 0

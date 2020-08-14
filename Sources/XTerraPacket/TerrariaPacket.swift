@@ -12,6 +12,7 @@ import SwiftyBytes
 public protocol TerrariaPacket{
     var bytes: [UInt8] {get set}
     var length: UInt16 {get set}
+    var context: TerrariaPacketContext {get set}
     var packetType: TerrariaPacketType {get set}
     var payload: [UInt8] {get set}
     
@@ -64,7 +65,8 @@ extension TerrariaPacket{
     }
     ````
     */
-    mutating public func decode() throws{
+    mutating public func decode(_ context: TerrariaPacketContext) throws{
+        self.context = context
         try decodeHeader()
         try decodePayload()
     }
@@ -73,6 +75,7 @@ extension TerrariaPacket{
     Call this function to decode the header of a terraria packet.
     */
     mutating public func decodeHeader() throws{
+        self.context = context
         let packetData = BinaryData(data: Data(self.bytes))
         let packetReader = BinaryReader(packetData)
         self.length = try packetReader.readUInt16()

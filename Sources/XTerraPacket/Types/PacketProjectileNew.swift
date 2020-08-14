@@ -11,6 +11,7 @@ import SwiftyBytes
 public struct PacketProjectileNew: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ClientToServer
     public var packetType: TerrariaPacketType = .ProjectileNew
     public var payload: [UInt8] = []
     public var projectileId: Int16 = 0

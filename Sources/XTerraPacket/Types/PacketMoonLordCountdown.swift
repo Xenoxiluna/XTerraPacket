@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketMoonLordCountdown: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .MoonLordCountdown
     public var payload: [UInt8] = []
     public var moonLordCountdown: Int32 = 0

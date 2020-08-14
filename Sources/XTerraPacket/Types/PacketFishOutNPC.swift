@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketFishOutNPC: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ClientToServer
     public var packetType: TerrariaPacketType = .FishOutNPC
     public var payload: [UInt8] = []
     public var x: UInt16 = 0

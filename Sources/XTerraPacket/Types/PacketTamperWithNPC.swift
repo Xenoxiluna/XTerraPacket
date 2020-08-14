@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketTamperWithNPC: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .TamperWithNPC
     public var payload: [UInt8] = []
     public var npcId: UInt16 = 0

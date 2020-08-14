@@ -11,6 +11,7 @@ import SwiftyBytes
 public struct PacketClientSyncedInventory: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ClientToServer
     public var packetType: TerrariaPacketType = .ClientSyncedInventory
     public var payload: [UInt8] = []
     

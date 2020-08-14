@@ -47,7 +47,7 @@ final class XTerraPacketTests: XCTestCase {
         guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
         var newpacket = packet as! PacketPlayerUpdate
         do{
-            try newpacket.decode()
+            try newpacket.decode(.ClientToServer)
         }catch {}
         XCTAssertEqual(packet.getType(), TerrariaPacketType.PlayerUpdate)
         XCTAssertEqual(newpacket.positionY, 4.6667764e-10)
@@ -58,7 +58,7 @@ final class XTerraPacketTests: XCTestCase {
         guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
         var newpacket = packet as! PacketLoadNetModule
         do{
-            try newpacket.decode()
+            try newpacket.decode(.ClientToServer)
         }catch {}
         XCTAssertEqual(packet.getType(), TerrariaPacketType.LoadNetModule)
         XCTAssertEqual(newpacket.netModuleType, PacketLoadNetModule.NetModuleType.Chat)
@@ -89,7 +89,7 @@ final class XTerraPacketTests: XCTestCase {
         guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
         var newpacket = packet as! PacketLoadNetModule
         do{
-            try newpacket.decode()
+            try newpacket.decode(.ServerToClient)
         }catch {}
         XCTAssertEqual(packet.getType(), TerrariaPacketType.LoadNetModule)
         XCTAssertEqual(newpacket.netModuleType, PacketLoadNetModule.NetModuleType.CreativePowers)
@@ -100,7 +100,7 @@ final class XTerraPacketTests: XCTestCase {
             guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
             var newpacket = packet as! PacketWorldInfo
             do{
-                try newpacket.decode()
+                try newpacket.decode(.ClientToServer)
             }catch {}
             XCTAssertEqual(packet.getType(), TerrariaPacketType.WorldInfo)
             XCTAssertEqual(newpacket.worldName, "Dark Gaming - Lite")
@@ -112,7 +112,7 @@ final class XTerraPacketTests: XCTestCase {
         guard let packet = try? TerrariaPacketFactory.decodePacket(packet: pbytes) else { return }
         var newpacket = packet as! PacketPlayerSpawn
         do{
-            try newpacket.decode()
+            try newpacket.decode(.ClientToServer)
         }catch {}
         XCTAssertEqual(packet.getType(), TerrariaPacketType.PlayerSpawn)
         XCTAssertEqual(newpacket.reason, PacketPlayerSpawn.SpawnReason.SpawningIntoWorld)

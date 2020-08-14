@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketPasswordSend: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ClientToServer
     public var packetType: TerrariaPacketType = .PasswordSend
     public var payload: [UInt8] = []
     public var password: String = ""

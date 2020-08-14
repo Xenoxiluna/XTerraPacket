@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketPlayerBuff: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .PlayerBuff
     public var payload: [UInt8] = []
     private let MAX_BUFFS = 22

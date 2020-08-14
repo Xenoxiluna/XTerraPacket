@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketPoofOfSmoke: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ServerToClient
     public var packetType: TerrariaPacketType = .PoofOfSmoke
     public var payload: [UInt8] = []
     public var x: Int16 = 0

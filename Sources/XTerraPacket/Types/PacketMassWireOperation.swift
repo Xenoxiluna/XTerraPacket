@@ -12,6 +12,7 @@ import SwiftyBytes
 public struct PacketMassWireOperation: TerrariaPacket{
     public var bytes: [UInt8] = []
     public var length: UInt16 = 0
+    public var context: TerrariaPacketContext = .ClientToServer
     public var packetType: TerrariaPacketType = .MassWireOperation
     public var payload: [UInt8] = []
     public var startX: Int16 = 0
