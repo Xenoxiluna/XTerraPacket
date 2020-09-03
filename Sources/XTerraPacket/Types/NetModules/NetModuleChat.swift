@@ -11,12 +11,12 @@ import SwiftyBytes
 /// This is a struct for the ChatCommand NetModule.
 public struct NetModuleChat: NetModule{
     public var command: ChatCommandType = .Emote
-    public var message: String = ""
+    public var commandData: ChatCommandData = ClientMsg.init()
     
     public init(){}
     
     /**
-    Call this function to initialize the NetModule with data.
+    Call this function to initialize the NetModule with Client message data.
      - Parameters:
         - command : The vanilla chat command you wish to perform as a NetModuleChat.ChatCommandType
         - message : The Chat Message String to send.
@@ -33,16 +33,20 @@ public struct NetModuleChat: NetModule{
     */
     public init(command: ChatCommandType, message: String){
         self.command = command
-        self.message = message
+        self.commandData = ClientMsg.init(message: message)
     }
     
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         if let c = ChatCommandType.init(rawValue: try reader.readVariableLengthString(.utf8).trimmingCharacters(in: .controlCharacters)){
             self.command = c
         }
         switch self.command{
         case .Say:
-            self.message = try reader.readVariableLengthString(.utf8)
+            if context == .ClientToServer{
+                self.commandData = ClientMsg.init(message: try reader.readVariableLengthString(.utf8))
+            }else{
+                self.commandData = ServerMsg.init(author: try reader.readUInt8(), message: try reader.readVariableLengthString(.utf8), colorR: try reader.readUInt8(), colorG: try reader.readUInt8(), colorB: try reader.readUInt8())
+            }
             return
         case .Emoji:
             return
@@ -60,11 +64,19 @@ public struct NetModuleChat: NetModule{
             return
         }
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         try writer.writeVariableLengthString(command.rawValue, .utf8)
         switch self.command{
         case .Say:
-            try writer.writeVariableLengthString(message, .utf8)
+            if context == .ClientToServer{
+                try writer.writeVariableLengthString((commandData as! ClientMsg).message , .utf8)
+            }else{
+                try writer.writeUInt8((commandData as! ServerMsg).author)
+                try writer.writeVariableLengthString((commandData as! ServerMsg).message, .utf8)
+                try writer.writeUInt8((commandData as! ServerMsg).colorR)
+                try writer.writeUInt8((commandData as! ServerMsg).colorG)
+                try writer.writeUInt8((commandData as! ServerMsg).colorB)
+            }
             return
         case .Emoji:
             return
@@ -92,5 +104,17 @@ public struct NetModuleChat: NetModule{
         case Help = "Help"
         case RPS = "RPS"
         case Emoji = "Emoji"
+    }
+    
+    public struct ClientMsg: ChatCommandData{
+        public var message: String = ""
+    }
+    
+    public struct ServerMsg: ChatCommandData{
+        public var author: UInt8
+        public var message: String
+        public var colorR: UInt8
+        public var colorG: UInt8
+        public var colorB: UInt8
     }
 }

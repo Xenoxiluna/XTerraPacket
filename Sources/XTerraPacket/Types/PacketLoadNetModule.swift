@@ -33,44 +33,44 @@ public struct PacketLoadNetModule: TerrariaPacket{
         switch self.netModuleType{
         case .Ambience:
             self.netModule = NetModuleAmbience()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .Bestiary:
             self.netModule = NetModuleBestiary()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .Chat:
             self.netModule = NetModuleChat()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .CreativePowerPermissions:
             self.netModule = NetModuleCreativePowerPermissions()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .CreativePowers:
             self.netModule = NetModuleCreativePowers()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .CreativeUnlocks:
             self.netModule = NetModuleCreativeUnlocks()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .CreativeUnlocksReport:
             self.netModule = NetModuleCreativeUnlocksPlayerReport()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .Liquid:
             self.netModule = NetModuleLiquid()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .Particles:
             self.netModule = NetModuleParticles()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .Ping:
             self.netModule = NetModulePing()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         case .TeleportPylon:
             self.netModule = NetModuleTeleportPylon()
-            try self.netModule.decode(reader)
+            try self.netModule.decode(reader, context)
         }
     }
     mutating public func encodePayload() throws{
         self.resetPayload()
         let writer = BinaryWriter()
         try writer.writeUInt16(netModuleType.rawValue)
-        try self.netModule.encode(writer)
+        try self.netModule.encode(writer, context)
         payload.append(contentsOf: writer.data.bytes)
     }
     

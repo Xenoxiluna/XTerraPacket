@@ -46,7 +46,9 @@ extension TerrariaPacket{
     
     /**
     Call this function to conveniently decode the header and the payload of a given packet.
-    
+    - Parameters:
+     - context : The TerrariaPacketContext in which to decode the given data in.
+     
     ### Usage Example: ###
     ````
     let packetData: [UInt8] = [25, 0, 13, 2, 72, 20, 0, 0, 0, 255, 16, 129, 69, 0, 240, 237, 69, 23, 143, 26, 65, 0, 0, 0, 0]
@@ -56,7 +58,7 @@ extension TerrariaPacket{
     }
      
     do{
-        try packet.decode()
+        try packet.decode(.ServerToClient)
         print("Decoded Packet Bytes: \(packet.bytes))")
     }catch{
         print("Decode failed...")
@@ -75,7 +77,6 @@ extension TerrariaPacket{
     Call this function to decode the header of a terraria packet.
     */
     mutating public func decodeHeader() throws{
-        self.context = context
         let packetData = BinaryData(data: Data(self.bytes))
         let packetReader = BinaryReader(packetData)
         self.length = try packetReader.readUInt16()

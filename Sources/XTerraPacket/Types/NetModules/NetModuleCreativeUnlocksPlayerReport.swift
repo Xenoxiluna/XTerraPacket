@@ -22,12 +22,12 @@ public struct NetModuleCreativeUnlocksPlayerReport: NetModule{
         self.amount = amount
     }
 
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         self.zero = try reader.readUInt8()
         self.itemId = try reader.readUInt16()
         self.amount = try reader.readUInt16()
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         try writer.writeUInt8(self.zero)
         try writer.writeUInt16(self.itemId)
         try writer.writeUInt16(self.amount)

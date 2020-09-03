@@ -22,12 +22,12 @@ public struct NetModuleCreativePowerPermissions: NetModule{
         self.level = level
     }
 
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         self.zero = try reader.readUInt8()
         self.powerId = try reader.readUInt16()
         self.level = try reader.readUInt8()
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         try writer.writeUInt8(self.zero)
         try writer.writeUInt16(self.powerId)
         try writer.writeUInt8(self.level)

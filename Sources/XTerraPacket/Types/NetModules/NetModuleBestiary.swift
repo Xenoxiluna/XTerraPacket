@@ -14,12 +14,12 @@ public struct NetModuleBestiary: NetModule{
 
     public init(){}
 
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         if let t = BestiaryType.init(rawValue: try reader.readUInt8()){
             self.type = t
         }
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         
     }
     

@@ -37,13 +37,13 @@ public struct NetModuleTeleportPylon: NetModule{
         self.pylonType = pylonType
     }
 
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         self.action = try reader.readUInt8()
         self.x = try reader.readInt16()
         self.y = try reader.readInt16()
         self.pylonType = try reader.readUInt8()
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         try writer.writeUInt8(self.action)
         try writer.writeInt16(self.x)
         try writer.writeInt16(self.y)

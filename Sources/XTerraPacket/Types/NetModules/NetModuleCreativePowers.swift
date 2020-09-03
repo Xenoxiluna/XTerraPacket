@@ -18,10 +18,10 @@ public struct NetModuleCreativePowers: NetModule{
         self.powerId = powerId
     }
 
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         self.powerId = try reader.readUInt16()
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         try writer.writeUInt16(self.powerId)
     }
 }

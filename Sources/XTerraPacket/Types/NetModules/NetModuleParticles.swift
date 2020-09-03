@@ -26,14 +26,14 @@ public struct NetModuleParticles: NetModule{
         self.playerId = playerId
     }
 
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         self.type = try reader.readUInt8()
         self.position = [try reader.readFloat32(),try reader.readFloat32()]
         self.velocity = [try reader.readFloat32(),try reader.readFloat32()]
         self.shaderIndex = try reader.readInt32()
         self.playerId = try reader.readUInt8()
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         try writer.writeUInt8(self.type)
         try writer.writeFloat32(self.position[0])
         try writer.writeFloat32(self.position[1])

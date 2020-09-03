@@ -13,12 +13,12 @@ public protocol NetModule{
     /**
     Call this function to decode a netmodule from a given BinaryReader's data.
     */
-    mutating func decode(_ reader: BinaryReader) throws
+    mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws
     
     /**
     Call this function to encode the payload of a netmodule to a given BinaryWriter.
     */
-    mutating func encode(_ writer: BinaryWriter) throws
+    mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws
     
     /**
     Placeholder init

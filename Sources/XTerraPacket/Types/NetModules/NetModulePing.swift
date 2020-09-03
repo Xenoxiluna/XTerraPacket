@@ -28,10 +28,10 @@ public struct NetModulePing: NetModule{
         self.position = position
     }
 
-    public mutating func decode(_ reader: BinaryReader) throws{
+    public mutating func decode(_ reader: BinaryReader, _ context: TerrariaPacketContext) throws{
         self.position = [try reader.readFloat32(),try reader.readFloat32()]
     }
-    public mutating func encode(_ writer: BinaryWriter) throws{
+    public mutating func encode(_ writer: BinaryWriter, _ context: TerrariaPacketContext) throws{
         try writer.writeFloat32(self.position[0])
         try writer.writeFloat32(self.position[1])
     }

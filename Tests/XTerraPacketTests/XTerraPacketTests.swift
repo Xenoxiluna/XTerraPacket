@@ -65,13 +65,14 @@ final class XTerraPacketTests: XCTestCase {
         
         let chat = newpacket.netModule as! NetModuleChat
         XCTAssertEqual(chat.command, NetModuleChat.ChatCommandType.Say)
-        XCTAssertEqual(chat.message.trimmingCharacters(in: .controlCharacters), "this is a test")
-        XCTAssertEqual(chat.message.trimmingCharacters(in: .controlCharacters).data(using: .utf8)!.bytes, [116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116])
+        XCTAssertEqual((chat.commandData as! NetModuleChat.ClientMsg).message.trimmingCharacters(in: .controlCharacters), "this is a test")
+        XCTAssertEqual((chat.commandData as! NetModuleChat.ClientMsg).message.trimmingCharacters(in: .controlCharacters).data(using: .utf8)!.bytes, [116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116])
     }
     
     func testCreateSayLoadNetModule(){
         var load = PacketLoadNetModule()
         load.netModuleType = .Chat
+        load.context = .ClientToServer
         load.netModule = NetModuleChat(command: .Say, message: "this is a test")
         do{
             try load.encode()
@@ -82,7 +83,7 @@ final class XTerraPacketTests: XCTestCase {
         
         let chat = load.netModule as! NetModuleChat
         XCTAssertEqual(chat.command, NetModuleChat.ChatCommandType.Say)
-        XCTAssertEqual(chat.message, "this is a test")
+        XCTAssertEqual((chat.commandData as! NetModuleChat.ClientMsg).message, "this is a test")
     }
     func testCreativeLoadNetModule(){
         let pbytes: [UInt8] = [12, 0, 82, 6, 0, 14, 0, 0, 126, 70, 9, 63]
