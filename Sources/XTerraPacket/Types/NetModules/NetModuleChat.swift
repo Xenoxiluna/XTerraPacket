@@ -45,7 +45,7 @@ public struct NetModuleChat: NetModule{
             if context == .ClientToServer{
                 self.commandData = ClientMsg.init(message: try reader.readVariableLengthString(.utf8))
             }else{
-                self.commandData = ServerMsg.init(author: try reader.readUInt8(), message: try reader.readVariableLengthString(.utf8), colorR: try reader.readUInt8(), colorG: try reader.readUInt8(), colorB: try reader.readUInt8())
+                self.commandData = ServerMsg.init(author: try reader.readUInt16(), message: try reader.readVariableLengthString(.utf8), colorR: try reader.readUInt8(), colorG: try reader.readUInt8(), colorB: try reader.readUInt8())
             }
             return
         case .Emoji:
@@ -71,7 +71,7 @@ public struct NetModuleChat: NetModule{
             if context == .ClientToServer{
                 try writer.writeVariableLengthString((commandData as! ClientMsg).message , .utf8)
             }else{
-                try writer.writeUInt8((commandData as! ServerMsg).author)
+                try writer.writeUInt16((commandData as! ServerMsg).author)
                 try writer.writeVariableLengthString((commandData as! ServerMsg).message, .utf8)
                 try writer.writeUInt8((commandData as! ServerMsg).colorR)
                 try writer.writeUInt8((commandData as! ServerMsg).colorG)
@@ -111,7 +111,7 @@ public struct NetModuleChat: NetModule{
     }
     
     public struct ServerMsg: ChatCommandData{
-        public var author: UInt8
+        public var author: UInt16 // Changed from previous UInt8 1.4
         public var message: String
         public var colorR: UInt8
         public var colorG: UInt8
