@@ -31,7 +31,7 @@ print("Packet Type: \(packet.getType())")
 Form there, its possible to run the decode again to translate the payload. You could also just use the packets decodePayload() function.
 ```swift
 do{
-    try packet.decode()
+try packet.decode(.ClientToServer)
     print("Decoded Packet Bytes: \(packet.bytes))")
 }catch{
     print("Decode failed...")
@@ -49,8 +49,18 @@ default:
 ```
  
  ### Encode
- TODO
- For now, See [API Documentation](https://xenoxiluna.github.io/XTerraPacket/index.html) for encode functionality.
+ See [API Documentation](https://xenoxiluna.github.io/XTerraPacket/index.html) for encode functionality.
+ 
+ Chat Message Example:
+ ```swift
+ var load = PacketLoadNetModule()
+ load.netModuleType = .Chat
+ load.context = .ClientToServer
+ load.netModule = NetModuleChat(command: .Say, message: "this is a test")
+ do{
+     try load.encode()
+ }catch {}
+ ```
  
  ## Dependencies
 
