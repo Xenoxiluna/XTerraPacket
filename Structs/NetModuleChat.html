@@ -14,7 +14,7 @@
     <a title="NetModuleChat Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (25% documented)</p>
+        <p><a href="../index.html"> Docs</a> (23% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -31,6 +31,9 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/TerrariaPacketContext.html">TerrariaPacketContext</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/TerrariaPacketFactory.html">TerrariaPacketFactory</a>
               </li>
               <li class="nav-group-task">
@@ -41,6 +44,9 @@
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12XTerraPacket15ChatCommandDataP">ChatCommandData</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/NetModule.html">NetModule</a>
               </li>
@@ -66,6 +72,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/NetModuleChat/ChatCommandType.html">– ChatCommandType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NetModuleChat/ClientMsg.html">– ClientMsg</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NetModuleChat/ServerMsg.html">– ServerMsg</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/NetModuleCreativePowerPermissions.html">NetModuleCreativePowerPermissions</a>
@@ -570,9 +582,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12XTerraPacket13NetModuleChatV7messageSSvp"></a>
-                    <a name="//apple_ref/swift/Property/message" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12XTerraPacket13NetModuleChatV7messageSSvp">message</a>
+                    <a name="/s:12XTerraPacket13NetModuleChatV11commandDataAA0e7CommandG0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/commandData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket13NetModuleChatV11commandDataAA0e7CommandG0_pvp">commandData</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -587,7 +599,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">commandData</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:12XTerraPacket15ChatCommandDataP">ChatCommandData</a></span></code></pre>
 
                         </div>
                       </div>
@@ -633,7 +645,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Call this function to initialize the NetModule with data.</p>
+                        <p>Call this function to initialize the NetModule with Client message data.</p>
 <h3 id='usage-example' class='heading'>Usage Example:</h3>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">load</span> <span class="o">=</span> <span class="kt">PacketLoadNetModule</span><span class="p">()</span>
 <span class="n">load</span><span class="o">.</span><span class="n">netModuleType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">Chat</span>
@@ -689,9 +701,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderCKF"></a>
-                    <a name="//apple_ref/swift/Method/decode(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderCKF">decode(_:<wbr>)</a>
+                    <a name="/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderC_AA08TerrariaB7ContextOtKF"></a>
+                    <a name="//apple_ref/swift/Method/decode(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderC_AA08TerrariaB7ContextOtKF">decode(_:<wbr>_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -705,7 +717,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">decode</span><span class="p">(</span><span class="n">_</span> <span class="nv">reader</span><span class="p">:</span> <span class="kt">BinaryReader</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">decode</span><span class="p">(</span><span class="n">_</span> <span class="nv">reader</span><span class="p">:</span> <span class="kt">BinaryReader</span><span class="p">,</span> <span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Enums/TerrariaPacketContext.html">TerrariaPacketContext</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -715,9 +727,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterCKF"></a>
-                    <a name="//apple_ref/swift/Method/encode(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterCKF">encode(_:<wbr>)</a>
+                    <a name="/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterC_AA08TerrariaB7ContextOtKF"></a>
+                    <a name="//apple_ref/swift/Method/encode(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterC_AA08TerrariaB7ContextOtKF">encode(_:<wbr>_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -731,7 +743,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">_</span> <span class="nv">writer</span><span class="p">:</span> <span class="kt">BinaryWriter</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">_</span> <span class="nv">writer</span><span class="p">:</span> <span class="kt">BinaryWriter</span><span class="p">,</span> <span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Enums/TerrariaPacketContext.html">TerrariaPacketContext</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -766,12 +778,68 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket13NetModuleChatV9ClientMsgV"></a>
+                    <a name="//apple_ref/swift/Struct/ClientMsg" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket13NetModuleChatV9ClientMsgV">ClientMsg</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/NetModuleChat/ClientMsg.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ClientMsg</span> <span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:12XTerraPacket15ChatCommandDataP">ChatCommandData</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12XTerraPacket13NetModuleChatV9ServerMsgV"></a>
+                    <a name="//apple_ref/swift/Struct/ServerMsg" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket13NetModuleChatV9ServerMsgV">ServerMsg</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/NetModuleChat/ServerMsg.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ServerMsg</span> <span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:12XTerraPacket15ChatCommandDataP">ChatCommandData</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-07-19)</p>
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-09-03)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

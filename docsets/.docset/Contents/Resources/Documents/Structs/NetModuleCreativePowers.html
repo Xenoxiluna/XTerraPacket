@@ -14,7 +14,7 @@
     <a title="NetModuleCreativePowers Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (25% documented)</p>
+        <p><a href="../index.html"> Docs</a> (23% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -31,6 +31,9 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/TerrariaPacketContext.html">TerrariaPacketContext</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/TerrariaPacketFactory.html">TerrariaPacketFactory</a>
               </li>
               <li class="nav-group-task">
@@ -41,6 +44,9 @@
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:12XTerraPacket15ChatCommandDataP">ChatCommandData</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/NetModule.html">NetModule</a>
               </li>
@@ -66,6 +72,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/NetModuleChat/ChatCommandType.html">– ChatCommandType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NetModuleChat/ClientMsg.html">– ClientMsg</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NetModuleChat/ServerMsg.html">– ServerMsg</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/NetModuleCreativePowerPermissions.html">NetModuleCreativePowerPermissions</a>
@@ -623,9 +635,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderCKF"></a>
-                    <a name="//apple_ref/swift/Method/decode(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderCKF">decode(_:<wbr>)</a>
+                    <a name="/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderC_AA08TerrariaB7ContextOtKF"></a>
+                    <a name="//apple_ref/swift/Method/decode(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6decodeyy11SwiftyBytes12BinaryReaderC_AA08TerrariaB7ContextOtKF">decode(_:<wbr>_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -639,7 +651,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">decode</span><span class="p">(</span><span class="n">_</span> <span class="nv">reader</span><span class="p">:</span> <span class="kt">BinaryReader</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">decode</span><span class="p">(</span><span class="n">_</span> <span class="nv">reader</span><span class="p">:</span> <span class="kt">BinaryReader</span><span class="p">,</span> <span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Enums/TerrariaPacketContext.html">TerrariaPacketContext</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -649,9 +661,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterCKF"></a>
-                    <a name="//apple_ref/swift/Method/encode(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterCKF">encode(_:<wbr>)</a>
+                    <a name="/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterC_AA08TerrariaB7ContextOtKF"></a>
+                    <a name="//apple_ref/swift/Method/encode(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12XTerraPacket9NetModuleP6encodeyy11SwiftyBytes12BinaryWriterC_AA08TerrariaB7ContextOtKF">encode(_:<wbr>_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -665,7 +677,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">_</span> <span class="nv">writer</span><span class="p">:</span> <span class="kt">BinaryWriter</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">_</span> <span class="nv">writer</span><span class="p">:</span> <span class="kt">BinaryWriter</span><span class="p">,</span> <span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Enums/TerrariaPacketContext.html">TerrariaPacketContext</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
@@ -677,7 +689,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-07-19)</p>
+          <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-09-03)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
